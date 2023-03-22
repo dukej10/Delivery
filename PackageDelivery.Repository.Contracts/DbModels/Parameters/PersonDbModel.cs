@@ -2,24 +2,25 @@
 {
     public class PersonDbModel
     {
-		public  long id { get; set; }
+		public  long Id { get; set; }
 
-        public string firstName { get; set; }
-
-
-        public string otherNames { get; set; }
+        public string FirstName { get; set; }
 
 
-        public string firstLastname { get; set; }
+        public string OtherNames { get; set; }
 
-        public string secondLastname { get; set; }
+
+        public string FirstLastname { get; set; }
+
+        public string SecondLastname { get; set; }
 
         public string IdentificationNumber { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
 
         public  int IdentificationType { get; set; }
 
+        public string PhoneNumber { get; set; }
 
     }
 }
