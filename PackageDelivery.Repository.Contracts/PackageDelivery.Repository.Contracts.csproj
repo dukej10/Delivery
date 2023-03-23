@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbModels\Core\OfficeDbModel.cs" />
+    <Compile Include="DbModels\Core\PackageDbModel.cs" />
     <Compile Include="DbModels\Core\SendDbModel.cs" />
     <Compile Include="DbModels\Parameters\DepartmentDbModel.cs" />
     <Compile Include="DbModels\Parameters\DocumentTypeDbModel.cs" />
