@@ -2,7 +2,7 @@
 
 namespace PackageDelivery.Repository.Contracts.DbModels.Core
 {
-    public class HistoryDbModel
+    public class SendDbModel
     {
         public long Id { get; set; }
 
@@ -10,14 +10,14 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
 
         public decimal Price { get; set; }
 
-        public long IdSender { get; set; }
+        public Nullable<long> IdSender { get; set; }
 
-        public long idAddress { get; set; }
+        public Nullable<long> idDestinationAddress { get; set; }
 
-        public long IdPackage { get; set; }
+        public Nullable<long> IdPackage { get; set; }
 
-        public long idState { get; set; }
+        public Nullable<long> IdState { get; set; }
 
-        public long IdTransportType { get; set; }
+        public Nullable<long> IdTransportType { get; set; }
     }
 }
