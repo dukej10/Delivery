@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbModels\Core\SendDbModel.cs" />
+    <Compile Include="DbModels\Parameters\DepartmentDbModel.cs" />
     <Compile Include="DbModels\Parameters\DocumentTypeDbModel.cs" />
     <Compile Include="DbModels\Parameters\PersonDbModel.cs" />
+    <Compile Include="DbModels\Parameters\TransportTypeDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
