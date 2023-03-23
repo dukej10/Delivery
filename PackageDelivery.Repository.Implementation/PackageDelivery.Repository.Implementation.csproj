@@ -123,8 +123,10 @@
       <DependentUpon>PackageDeliveryDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Mappers\DbModelMapperBase.cs" />
+    <Compile Include="Mappers\Parameters\DepartmentRepositoryMapper.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeRepositoryMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonRepositoryMapper.cs" />
+    <Compile Include="Mappers\Parameters\TransportTypeRepositoryMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Implementation\" />
+    <Folder Include="Mappers\Core\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PackageDelivery.Repository.Contracts\PackageDelivery.Repository.Contracts.csproj">
