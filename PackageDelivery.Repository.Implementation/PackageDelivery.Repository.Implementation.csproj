@@ -122,6 +122,8 @@
     <Compile Include="DataModel\vehiculo.cs">
       <DependentUpon>PackageDeliveryDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\Core\OfficeRepositoryMapper.cs" />
+    <Compile Include="Mappers\Core\PackageRepositoryMapper.cs" />
     <Compile Include="Mappers\Core\SendRepositoryMapper.cs" />
     <Compile Include="Mappers\Core\StoreRepositoryMapper.cs" />
     <Compile Include="Mappers\DbModelMapperBase.cs" />
