@@ -44,8 +44,10 @@
     <Compile Include="DbModels\Core\OfficeDbModel.cs" />
     <Compile Include="DbModels\Core\PackageDbModel.cs" />
     <Compile Include="DbModels\Core\SendDbModel.cs" />
+    <Compile Include="DbModels\Core\StoreDbModel.cs" />
     <Compile Include="DbModels\Parameters\DepartmentDbModel.cs" />
     <Compile Include="DbModels\Parameters\DocumentTypeDbModel.cs" />
+    <Compile Include="DbModels\Parameters\MunicipalityDbModel.cs" />
     <Compile Include="DbModels\Parameters\PersonDbModel.cs" />
     <Compile Include="DbModels\Parameters\TransportTypeDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
