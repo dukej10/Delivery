@@ -122,9 +122,12 @@
     <Compile Include="DataModel\vehiculo.cs">
       <DependentUpon>PackageDeliveryDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\Core\SendRepositoryMapper.cs" />
     <Compile Include="Mappers\DbModelMapperBase.cs" />
+    <Compile Include="Mappers\Parameters\DepartmentRepositoryMapper.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeRepositoryMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonRepositoryMapper.cs" />
+    <Compile Include="Mappers\Parameters\TransportTypeRepositoryMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
