@@ -1,14 +1,9 @@
 ﻿using PackageDelivery.Repository.Contracts.DbModels.Parameters;
-using PackageDelivery.Repository.Implementation.DataModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
 {
-    internal class DepartmentRepositoryMapper : DbModelMapperBase<DepartmentDbModel, departamento>
+    internal class DepartmentApplicationMapper : DbModelMapperBase<DepartmentDbModel, departamento>
     {
         public override DepartmentDbModel DatabaseToDbModelMapper(departamento input)
         {

@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappers\DTOMapperBase.cs" />
-    <Compile Include="Mappers\Parameters\DepartmentRepositoryMapper.cs" />
+    <Compile Include="Mappers\Parameters\MunicipalityApplicationMapper.cs" />
+    <Compile Include="Mappers\Parameters\DepartmentApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\TransportTypeApplicationMapper.cs" />

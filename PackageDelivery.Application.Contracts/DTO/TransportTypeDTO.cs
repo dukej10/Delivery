@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PackageDelivery.GUI.Models.Parameters
+namespace PackageDelivery.Application.Contracts.DTO
 {
     public class TransportTypeDTO
     {
