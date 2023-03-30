@@ -3,7 +3,7 @@ using PackageDelivery.GUI.Models.Parameters;
 using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
 
-namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
+namespace PackageDelivery.GUI.Implementation.Mappers.Parameters
 {
     public class TransportGUIMapper : ModelMapperBase<TransportTypeModel, TransportTypeDbModel>
 
