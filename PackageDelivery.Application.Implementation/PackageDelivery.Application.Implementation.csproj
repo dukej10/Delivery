@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\Core\AddressApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\ShippingStatusApplicationMapper.cs" />
     <Compile Include="Mappers\DTOMapperBase.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonApplicationMapper.cs" />

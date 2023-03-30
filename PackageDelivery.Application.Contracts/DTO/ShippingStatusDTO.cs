@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PackageDelivery.GUI.Models.Parameters
+namespace PackageDelivery.Application.Contracts.DTO
 {
-    public class DocumentTypeModel
+    public class ShippingStatusDTO
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
     }
 }

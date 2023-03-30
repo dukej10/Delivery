@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PackageDelivery.GUI.Models.Parameters
+namespace PackageDelivery.GUI.Models.Core
 {
-    public class DocumentTypeModel
+    public class ShippingStatusModel
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
+
     }
 }
