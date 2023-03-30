@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace PackageDelivery.Repository.Contracts.DbModels.Core
+namespace PackageDelivery.GUI.Models.Core
 {
-    public class OfficeDbModel
+    public class OfficeModel
     {
         public long Id { get; set; }
 
@@ -11,7 +11,7 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
         public string Code { get; set; }
 
         public string Phone { get; set; }
-        
+
         public string Latitude { get; set; }
 
         public string Longitude { get; set; }
@@ -19,6 +19,5 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
         public string Address { get; set; }
 
         public Nullable<long> IdMunicipality { get; set; }
-
     }
 }

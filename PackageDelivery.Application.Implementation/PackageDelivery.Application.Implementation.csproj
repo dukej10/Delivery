@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PackageDelivery.Application.Contracts\PackageDelivery.Application.Contracts.csproj">
+      <Project>{6e3f5075-7220-4776-8118-d9c07ca783ef}</Project>
+      <Name>PackageDelivery.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PackageDelivery.Repository.Contracts\PackageDelivery.Repository.Contracts.csproj">
+      <Project>{c4482055-6339-4a50-893d-fa45c8a1919c}</Project>
+      <Name>PackageDelivery.Repository.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
