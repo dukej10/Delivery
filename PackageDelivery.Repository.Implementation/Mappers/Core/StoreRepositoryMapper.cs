@@ -1,10 +1,6 @@
 ﻿using PackageDelivery.Repository.Contracts.DbModels.Core;
 using PackageDelivery.Repository.Implementation.DataModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PackageDelivery.Repository.Implementation.Mappers.Core
 {
@@ -17,7 +13,7 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 Id = input.id,
                 Name = input.nombre,
                 Code = input.codigo,
-                Adddress = input.direccion,
+                Address = input.direccion,
                 Latitude = input.latitud,
                 Longitude = input.longitud,
                 IdMunicipality = input.idMunicipio
@@ -41,7 +37,7 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 id = input.Id,
                 nombre = input.Name,
                 codigo = input.Code,
-                direccion = input.Adddress,
+                direccion = input.Address,
                 latitud = input.Latitude,
                 longitud = input.Longitude,
                 idMunicipio = input.IdMunicipality

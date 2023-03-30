@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PackageDelivery.GUI.Mappers.Core
 {
-    public class OfficeApplicationMapper : ModelMapperBase<OfficeModel, OfficeDTO>
+    public class OfficeGUIMapper : ModelMapperBase<OfficeModel, OfficeDTO>
     {
         public override OfficeModel DTOToModelMapper(OfficeDTO input)
         {

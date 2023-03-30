@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Mappers\Core\OfficeApplicationMapper.cs" />
     <Compile Include="Mappers\Core\PackageApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\StoreApplicationMapper.cs" />
     <Compile Include="Mappers\DTOMapperBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

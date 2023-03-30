@@ -174,12 +174,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mappers\Core\OfficeApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\OfficeGUIMapper.cs" />
     <Compile Include="Mappers\Core\PackageGUIMapper.cs" />
     <Compile Include="Mappers\ModelMapperBase.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Core\OfficeModel.cs" />
     <Compile Include="Models\Core\PackageModel.cs" />
+    <Compile Include="Mappers\Core\StoreGUIMapper.cs" />
+    <Compile Include="Models\Core\StoreModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

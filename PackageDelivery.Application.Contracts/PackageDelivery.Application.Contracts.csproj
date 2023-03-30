@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO\OfficeDTO.cs" />
     <Compile Include="DTO\PackageDTO.cs" />
+    <Compile Include="DTO\StoreDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
