@@ -177,6 +177,7 @@
     <Compile Include="Mappers\ModelMapperBase.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonGUIMapper.cs" />
+    <Compile Include="Mappers\Parameters\DeparmentGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\TransportTypeGUIMapper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
