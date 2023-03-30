@@ -47,6 +47,8 @@
     <Compile Include="DbModels\Core\SendDbModel.cs" />
     <Compile Include="DbModels\Core\ShippingStatusDbModel.cs" />
     <Compile Include="DbModels\Core\StoreDbModel.cs" />
+    <Compile Include="DbModels\Core\HistoryDbModel.cs" />
+    <Compile Include="DbModels\Core\VehicleDbModel.cs" />
     <Compile Include="DbModels\Parameters\DepartmentDbModel.cs" />
     <Compile Include="DbModels\Parameters\DocumentTypeDbModel.cs" />
     <Compile Include="DbModels\Parameters\MunicipalityDbModel.cs" />
