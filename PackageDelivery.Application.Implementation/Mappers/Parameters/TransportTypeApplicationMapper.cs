@@ -1,5 +1,5 @@
-﻿using PackageDelivery.Application.Implementation.Mappers;
-using PackageDelivery.GUI.Models.Parameters;
+﻿using PackageDelivery.Application.Contracts.DTO;
+using PackageDelivery.Application.Implementation.Mappers;
 using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
 

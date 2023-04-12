@@ -41,17 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DepartmentDTO.cs" />
-    <Compile Include="DTO\AddressDTO.cs" />
-    <Compile Include="DTO\DocumentTypeDTO.cs" />
-    <Compile Include="DTO\MunicipalityDTO.cs" />
-    <Compile Include="DTO\PersonDTO.cs" />
-    <Compile Include="DTO\TransportTypeDTO.cs" />
-    <Compile Include="DTO\SendDTO.cs" />
-    <Compile Include="DTO\ShippingStatusDTO.cs" />
-    <Compile Include="DTO\OfficeDTO.cs" />
-    <Compile Include="DTO\PackageDTO.cs" />
-    <Compile Include="DTO\StoreDTO.cs" />
+    <Compile Include="DTO\Parameters\DepartmentDTO.cs" />
+    <Compile Include="DTO\Core\AddressDTO.cs" />
+    <Compile Include="DTO\Parameters\DocumentTypeDTO.cs" />
+    <Compile Include="DTO\Parameters\MunicipalityDTO.cs" />
+    <Compile Include="DTO\Parameters\PersonDTO.cs" />
+    <Compile Include="DTO\Parameters\TransportTypeDTO.cs" />
+    <Compile Include="DTO\Core\SendDTO.cs" />
+    <Compile Include="DTO\Core\ShippingStatusDTO.cs" />
+    <Compile Include="DTO\Core\OfficeDTO.cs" />
+    <Compile Include="DTO\Core\PackageDTO.cs" />
+    <Compile Include="DTO\Core\StoreDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
