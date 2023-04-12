@@ -50,6 +50,10 @@
     <Compile Include="Mappers\Parameters\DocumentTypeApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonApplicationMapper.cs" />
     <Compile Include="Mappers\Parameters\TransportTypeApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\OfficeApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\PackageApplicationMapper.cs" />
+    <Compile Include="Mappers\Core\StoreApplicationMapper.cs" />
+    <Compile Include="Mappers\DTOMapperBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +65,7 @@
       <Project>{c4482055-6339-4a50-893d-fa45c8a1919c}</Project>
       <Name>PackageDelivery.Repository.Contracts</Name>
     </ProjectReference>
+<<<<<<< HEAD
     <ProjectReference Include="..\PackageDelivery.Repository.Implementation\PackageDelivery.Repository.Implementation.csproj">
       <Project>{804BB2D3-4A6E-4B16-90E7-14FD9045835A}</Project>
       <Name>PackageDelivery.Repository.Implementation</Name>
@@ -68,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Implementation\" />
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementation\" />
+    <Folder Include="Mappers\Parameters\" />
+>>>>>>> cb66a6edf12372e18b6a4d43ae9760fa622f19ab
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

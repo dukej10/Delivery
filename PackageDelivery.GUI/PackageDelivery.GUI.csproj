@@ -187,6 +187,14 @@
     <Compile Include="Models\Core\AddressModel.cs" />
     <Compile Include="Models\Core\SendModel.cs" />
     <Compile Include="Models\Core\ShippingStatusModel.cs" />
+    <Compile Include="Mappers\Core\OfficeGUIMapper.cs" />
+    <Compile Include="Mappers\Core\PackageGUIMapper.cs" />
+    <Compile Include="Mappers\ModelMapperBase.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Core\OfficeModel.cs" />
+    <Compile Include="Models\Core\PackageModel.cs" />
+    <Compile Include="Mappers\Core\StoreGUIMapper.cs" />
+    <Compile Include="Models\Core\StoreModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Parameters\DepartmentModel.cs" />
@@ -271,6 +279,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Mappers\Parameters\" />
+    <Folder Include="Models\Parameters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -304,10 +314,13 @@
       <Project>{6e3f5075-7220-4776-8118-d9c07ca783ef}</Project>
       <Name>PackageDelivery.Application.Contracts</Name>
     </ProjectReference>
+<<<<<<< HEAD
     <ProjectReference Include="..\PackageDelivery.Repository.Contracts\PackageDelivery.Repository.Contracts.csproj">
       <Project>{C4482055-6339-4A50-893D-FA45C8A1919C}</Project>
       <Name>PackageDelivery.Repository.Contracts</Name>
     </ProjectReference>
+=======
+>>>>>>> cb66a6edf12372e18b6a4d43ae9760fa622f19ab
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

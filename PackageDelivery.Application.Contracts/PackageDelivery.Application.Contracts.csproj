@@ -49,6 +49,9 @@
     <Compile Include="DTO\TransportTypeDTO.cs" />
     <Compile Include="DTO\SendDTO.cs" />
     <Compile Include="DTO\ShippingStatusDTO.cs" />
+    <Compile Include="DTO\OfficeDTO.cs" />
+    <Compile Include="DTO\PackageDTO.cs" />
+    <Compile Include="DTO\StoreDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
