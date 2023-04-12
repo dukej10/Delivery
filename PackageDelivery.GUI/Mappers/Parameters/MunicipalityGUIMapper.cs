@@ -1,12 +1,7 @@
-﻿using PackageDelivery.Repository.Contracts.DbModels.Parameters;
-using System;
-using System.Collections.Generic;
-using PackageDelivery.GUI.Models.Parameters;
-using System.Linq;
-using System.Web;
-using PackageDelivery.Application.Contracts.DTO;
+﻿using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.GUI.Implementation.Mappers;
-using PackageDelivery.Repository.Contracts.DbModels.Core;
+using PackageDelivery.GUI.Models.Parameters;
+using System.Collections.Generic;
 
 namespace PackageDelivery.GUI.Mappers.Parameters
 {
