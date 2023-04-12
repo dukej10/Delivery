@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO\DepartmentDTO.cs" />
     <Compile Include="DTO\DocumentTypeDTO.cs" />
+    <Compile Include="DTO\MunicipalityDTO.cs" />
     <Compile Include="DTO\PersonDTO.cs" />
     <Compile Include="DTO\TransportTypeDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

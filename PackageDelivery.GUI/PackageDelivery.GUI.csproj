@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="Mappers\ModelMapperBase.cs" />
     <Compile Include="Mappers\Parameters\DocumentTypeGUIMapper.cs" />
+    <Compile Include="Mappers\Parameters\MunicipalityGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\DeparmentGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\TransportTypeGUIMapper.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Parameters\DepartmentModel.cs" />
     <Compile Include="Models\Parameters\DocumentTypeModel.cs" />
+    <Compile Include="Models\Parameters\MunicipalityModel.cs" />
     <Compile Include="Models\Parameters\PersonModel.cs" />
     <Compile Include="Models\Parameters\TransportTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
