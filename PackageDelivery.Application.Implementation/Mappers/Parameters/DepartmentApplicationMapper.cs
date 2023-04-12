@@ -1,4 +1,5 @@
 ﻿using PackageDelivery.Repository.Contracts.DbModels.Parameters;
+using PackageDelivery.Repository.Implementation.DataModel;
 using System.Collections.Generic;
 
 namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
