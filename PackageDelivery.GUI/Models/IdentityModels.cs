@@ -18,16 +18,18 @@ namespace PackageDelivery.GUI.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class DocumentTypeImpApplication : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public DocumentTypeImpApplication()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static DocumentTypeImpApplication Create()
         {
-            return new ApplicationDbContext();
+            return new DocumentTypeImpApplication();
         }
+
+        public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.DocumentTypeModel> DocumentTypeModels { get; set; }
     }
 }

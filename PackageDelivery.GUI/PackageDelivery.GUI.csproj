@@ -171,6 +171,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Parameters\DocumentTypeController.cs" />
+    <Compile Include="Data\PackageDeliveryGUIContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,6 +278,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\DocumentType\Create.cshtml" />
+    <Content Include="Views\DocumentType\Delete.cshtml" />
+    <Content Include="Views\DocumentType\Details.cshtml" />
+    <Content Include="Views\DocumentType\Edit.cshtml" />
+    <Content Include="Views\DocumentType\Index.cshtml" />
+    <Content Include="Views\PersonModels\Create.cshtml" />
+    <Content Include="Views\PersonModels\Delete.cshtml" />
+    <Content Include="Views\PersonModels\Details.cshtml" />
+    <Content Include="Views\PersonModels\Edit.cshtml" />
+    <Content Include="Views\PersonModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,10 +324,17 @@
       <Project>{6e3f5075-7220-4776-8118-d9c07ca783ef}</Project>
       <Name>PackageDelivery.Application.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PackageDelivery.Application.Implementation\PackageDelivery.Application.Implementation.csproj">
+      <Project>{0e987256-598c-424a-8c9b-28fe327bc5d4}</Project>
+      <Name>PackageDelivery.Application.Implementation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PackageDelivery.Repository.Contracts\PackageDelivery.Repository.Contracts.csproj">
       <Project>{C4482055-6339-4A50-893D-FA45C8A1919C}</Project>
       <Name>PackageDelivery.Repository.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

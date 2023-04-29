@@ -54,10 +54,12 @@
     <Compile Include="DbModels\Parameters\MunicipalityDbModel.cs" />
     <Compile Include="DbModels\Parameters\PersonDbModel.cs" />
     <Compile Include="DbModels\Parameters\TransportTypeDbModel.cs" />
+    <Compile Include="Interfaces\IDepartmentRepository.cs" />
+    <Compile Include="Interfaces\IDocumentTypeRepository.cs" />
+    <Compile Include="Interfaces\IMunicipalityRepository.cs" />
+    <Compile Include="Interfaces\IPersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

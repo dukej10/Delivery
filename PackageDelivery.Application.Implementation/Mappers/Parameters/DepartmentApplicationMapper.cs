@@ -1,45 +1,48 @@
-﻿using PackageDelivery.Repository.Contracts.DbModels.Parameters;
-using PackageDelivery.Repository.Implementation.DataModel;
+﻿using PackageDelivery.Application.Contracts.DTO;
+using PackageDelivery.Application.Implementation.Mappers;
+using PackageDelivery.GUI.Models.Parameters;
+using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
+
 
 namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
 {
-    internal class DepartmentApplicationMapper : DbModelMapperBase<DepartmentDbModel, departamento>
+    internal class DepartmentApplicationMapper : DTOMapperBase<DepartmentDTO, DepartmentDbModel>
     {
-        public override DepartmentDbModel DatabaseToDbModelMapper(departamento input)
+        public override DepartmentDTO DbModelToDTOMapper(DepartmentDbModel input)
         {
-            return new DepartmentDbModel()
+            return new DepartmentDTO()
             {
-                Id = input.id,
-                Name = input.nombre,
+                Id = input.Id,
+                Name = input.Name,
             };
         }
 
-        public override IEnumerable<DepartmentDbModel> DatabaseToDbModelMapper(IEnumerable<departamento> input)
+        public override IEnumerable<DepartmentDTO> DbModelToDTOMapper(IEnumerable<DepartmentDbModel> input)
         {
-            IList<DepartmentDbModel> list = new List<DepartmentDbModel>();
-            foreach (var item in input)
+            IList<DepartmentDTO> list = new List<DepartmentDTO>();
+             foreach (var item in input)
             {
-                list.Add(this.DatabaseToDbModelMapper(item));
+                list.Add(this.DbModelToDTOMapper(item));
             }
             return list;
         }
 
-        public override departamento DbModelToDatabaseMapper(DepartmentDbModel input)
+        public override DepartmentDbModel DTOToDbModelMapper(DepartmentDTO input)
         {
-            return new departamento()
+            return new DepartmentDbModel()
             {
-                id = input.Id,
-                nombre = input.Name
+                Id = input.Id,
+                Name = input.Name
             };
         }
 
-        public override IEnumerable<departamento> DbModelToDatabaseMapper(IEnumerable<DepartmentDbModel> input)
+        public override IEnumerable<DepartmentDbModel> DTOToDbModelMapper(IEnumerable<DepartmentDTO> input)
         {
-            IList<departamento> list = new List<departamento>();
+            IList<DepartmentDbModel> list = new List<DepartmentDbModel>();
             foreach (var item in input)
             {
-                list.Add(this.DbModelToDatabaseMapper(item));
+                list.Add(this.DTOToDbModelMapper(item));
             }
             return list;
         }
