@@ -15,12 +15,11 @@ using PackageDelivery.GUI.Models.Parameters;
 
 namespace PackageDelivery.GUI.Controllers.Parameters
 {
-    public class PersonController : Controller
+    public class TransportTypeController : Controller
     {
+        private ITransportTypeApplication _app = new TransportTypeImpApplication();
 
-        private IPersonApplication _app = new PersonImpApplication();
-        // GET: Person
-        // GET: Person
+        // GET: TransportType
         public ActionResult Index(string filter = "")
         {
             return View(_app.getRecordsList(filter));
@@ -33,13 +32,13 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonGUIMapper mapper = new PersonGUIMapper();
-            PersonModel personTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
-            if (personTypeDTO == null)
+            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
+            if (transportTypeDTO == null)
             {
                 return HttpNotFound();
             }
-            return View(personTypeDTO);
+            return View(transportTypeDTO);
         }
 
         // GET: Person/Create
@@ -53,20 +52,20 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] PersonModel personTypeDTO)
+        public ActionResult Create([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] TransportTypeModel transportTypeDTO)
         {
             if (ModelState.IsValid)
             {
-                PersonGUIMapper mapper = new PersonGUIMapper();
-                PersonDTO response = _app.createRecord(mapper.ModelToDTOMapper(personTypeDTO));
+                TransportGUIMapper mapper = new TransportGUIMapper();
+                TransportTypeDTO response = _app.createRecord(mapper.ModelToDTOMapper(transportTypeDTO));
                 if (response != null)
                 {
                     return RedirectToAction("Index");
                 }
-                return View(personTypeDTO);
+                return View(transportTypeDTO);
             }
             ViewBag.ErrorMessage = "Error ejecutando la acción";
-            return View(personTypeDTO);
+            return View(transportTypeDTO);
         }
 
         // GET: Person/Edit/5
@@ -76,13 +75,13 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonGUIMapper mapper = new PersonGUIMapper();
-            PersonModel personTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
-            if (personTypeDTO == null)
+            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
+            if (transportTypeDTO == null)
             {
                 return HttpNotFound();
             }
-            return View(personTypeDTO);
+            return View(transportTypeDTO);
         }
 
         // POST: Person/Edit/5
@@ -90,19 +89,19 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] PersonModel personTypeDTO)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] TransportTypeModel transportTypeDTO)
         {
             if (ModelState.IsValid)
             {
-                PersonGUIMapper mapper = new PersonGUIMapper();
-                PersonDTO response = _app.updateRecord(mapper.ModelToDTOMapper(personTypeDTO));
+                TransportGUIMapper mapper = new TransportGUIMapper();
+                TransportTypeDTO response = _app.updateRecord(mapper.ModelToDTOMapper(transportTypeDTO));
                 if (response != null)
                 {
                     return RedirectToAction("Index");
                 }
             }
             ViewBag.ErrorMessage = "Error ejecutando la acción";
-            return View(personTypeDTO);
+            return View(transportTypeDTO);
         }
 
         // GET: Person/Delete/5
@@ -112,13 +111,13 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonGUIMapper mapper = new PersonGUIMapper();
-            PersonModel personTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
-            if (personTypeDTO == null)
+            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
+            if (transportTypeDTO == null)
             {
                 return HttpNotFound();
             }
-            return View(personTypeDTO);
+            return View(transportTypeDTO);
         }
 
         // POST: Person/Delete/5

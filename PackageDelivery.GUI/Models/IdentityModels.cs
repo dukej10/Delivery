@@ -35,5 +35,7 @@ namespace PackageDelivery.GUI.Models
         public System.Data.Entity.DbSet<PackageDelivery.Application.Contracts.DTO.DocumentTypeDTO> DocumentTypeDTOes { get; set; }
 
         public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.PersonModel> PersonModels { get; set; }
+
+        public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.TransportTypeModel> TransportTypeModels { get; set; }
     }
 }
