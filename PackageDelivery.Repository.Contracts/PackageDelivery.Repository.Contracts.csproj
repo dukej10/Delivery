@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IDocumentTypeRepository.cs" />
     <Compile Include="Interfaces\IMunicipalityRepository.cs" />
     <Compile Include="Interfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\ITransportTypeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

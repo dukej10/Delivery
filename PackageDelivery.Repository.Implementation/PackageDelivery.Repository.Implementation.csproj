@@ -126,6 +126,7 @@
     <Compile Include="Implementation\Parameters\DocumentTypeImpRepository.cs" />
     <Compile Include="Implementation\Parameters\MunicipalityImpRepository.cs" />
     <Compile Include="Implementation\Parameters\PersonImpRepository.cs" />
+    <Compile Include="Implementation\Parameters\TransportTypeImpRepository.cs" />
     <Compile Include="Mappers\Core\AddressRepositoryMapper.cs" />
     <Compile Include="Mappers\Core\OfficeRepositoryMapper.cs" />
     <Compile Include="Mappers\Core\PackageRepositoryMapper.cs" />
