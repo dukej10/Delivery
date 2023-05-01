@@ -56,6 +56,7 @@
     <Compile Include="Interfaces\Parameters\IDocumentTypeApplication.cs" />
     <Compile Include="Interfaces\Parameters\IMunicipalityApplication.cs" />
     <Compile Include="Interfaces\Parameters\IPersonApplication.cs" />
+    <Compile Include="Interfaces\Parameters\ITransportTypeApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
