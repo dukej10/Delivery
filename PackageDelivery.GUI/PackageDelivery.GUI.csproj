@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Parameters\DocumentTypeController.cs" />
+    <Compile Include="Controllers\Parameters\PersonController.cs" />
     <Compile Include="Data\PackageDeliveryGUIContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -283,11 +284,11 @@
     <Content Include="Views\DocumentType\Details.cshtml" />
     <Content Include="Views\DocumentType\Edit.cshtml" />
     <Content Include="Views\DocumentType\Index.cshtml" />
-    <Content Include="Views\PersonModels\Create.cshtml" />
-    <Content Include="Views\PersonModels\Delete.cshtml" />
-    <Content Include="Views\PersonModels\Details.cshtml" />
-    <Content Include="Views\PersonModels\Edit.cshtml" />
-    <Content Include="Views\PersonModels\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
+    <Content Include="Views\Person\Delete.cshtml" />
+    <Content Include="Views\Person\Details.cshtml" />
+    <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
