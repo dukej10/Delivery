@@ -57,6 +57,8 @@
     <Compile Include="Interfaces\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IDocumentTypeRepository.cs" />
     <Compile Include="Interfaces\IMunicipalityRepository.cs" />
+    <Compile Include="Interfaces\IOfficeRepository.cs" />
+    <Compile Include="Interfaces\IPackageRepository.cs" />
     <Compile Include="Interfaces\IPersonRepository.cs" />
     <Compile Include="Interfaces\ITransportTypeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -169,6 +169,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Core\OfficeController.cs" />
+    <Compile Include="Controllers\Core\PackageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Parameters\DocumentTypeController.cs" />
@@ -193,7 +195,6 @@
     <Compile Include="Models\Core\ShippingStatusModel.cs" />
     <Compile Include="Mappers\Core\OfficeGUIMapper.cs" />
     <Compile Include="Mappers\Core\PackageGUIMapper.cs" />
-    <Compile Include="Mappers\ModelMapperBase.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Core\OfficeModel.cs" />
     <Compile Include="Models\Core\PackageModel.cs" />
@@ -295,6 +296,16 @@
     <Content Include="Views\TransportType\Details.cshtml" />
     <Content Include="Views\TransportType\Edit.cshtml" />
     <Content Include="Views\TransportType\Index.cshtml" />
+    <Content Include="Views\OfficeModel\Create.cshtml" />
+    <Content Include="Views\OfficeModel\Delete.cshtml" />
+    <Content Include="Views\OfficeModel\Details.cshtml" />
+    <Content Include="Views\OfficeModel\Edit.cshtml" />
+    <Content Include="Views\OfficeModel\Index.cshtml" />
+    <Content Include="Views\Package\Create.cshtml" />
+    <Content Include="Views\Package\Delete.cshtml" />
+    <Content Include="Views\Package\Details.cshtml" />
+    <Content Include="Views\Package\Edit.cshtml" />
+    <Content Include="Views\Package\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
