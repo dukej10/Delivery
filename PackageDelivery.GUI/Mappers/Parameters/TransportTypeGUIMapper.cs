@@ -1,14 +1,15 @@
-﻿using PackageDelivery.GUI.Implementation.Mappers;
+﻿using PackageDelivery.Application.Contracts.DTO;
+using PackageDelivery.GUI.Implementation.Mappers;
 using PackageDelivery.GUI.Models.Parameters;
 using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
 
 namespace PackageDelivery.GUI.Implementation.Mappers.Parameters
 {
-    public class TransportGUIMapper : ModelMapperBase<TransportTypeModel, TransportTypeDbModel>
+    public class TransportGUIMapper : ModelMapperBase<TransportTypeModel, TransportTypeDTO>
 
     {
-        public override TransportTypeModel DTOToModelMapper(TransportTypeDbModel input)
+        public override TransportTypeModel DTOToModelMapper(TransportTypeDTO input)
         {
             return new TransportTypeModel()
             {
@@ -17,7 +18,7 @@ namespace PackageDelivery.GUI.Implementation.Mappers.Parameters
             };
         }
 
-        public override IEnumerable<TransportTypeModel> DTOToModelMapper(IEnumerable<TransportTypeDbModel> input)
+        public override IEnumerable<TransportTypeModel> DTOToModelMapper(IEnumerable<TransportTypeDTO> input)
         {
             IList<TransportTypeModel> list = new List<TransportTypeModel>();
             foreach (var item in input)
@@ -27,18 +28,18 @@ namespace PackageDelivery.GUI.Implementation.Mappers.Parameters
             return list;
         }
 
-        public override TransportTypeDbModel ModelToDTOMapper(TransportTypeModel input)
+        public override TransportTypeDTO ModelToDTOMapper(TransportTypeModel input)
         {
-            return new TransportTypeDbModel()
+            return new TransportTypeDTO()
             {
                 Id = input.Id,
                 Name = input.Name
             };
         }
 
-        public override IEnumerable<TransportTypeDbModel> ModelToDTOMapper(IEnumerable<TransportTypeModel> input)
+        public override IEnumerable<TransportTypeDTO> ModelToDTOMapper(IEnumerable<TransportTypeModel> input)
         {
-            IList<TransportTypeDbModel> list = new List<TransportTypeDbModel>();
+            IList<TransportTypeDTO> list = new List<TransportTypeDTO>();
             foreach (var item in input)
             {
                 list.Add(this.ModelToDTOMapper(item));
