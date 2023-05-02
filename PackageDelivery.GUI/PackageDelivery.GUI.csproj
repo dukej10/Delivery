@@ -171,7 +171,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Parameters\DepartmentController.cs" />
     <Compile Include="Controllers\Parameters\DocumentTypeController.cs" />
+    <Compile Include="Controllers\Parameters\MunicipalityController.cs" />
     <Compile Include="Controllers\Parameters\PersonController.cs" />
     <Compile Include="Controllers\Parameters\TransportTypeController.cs" />
     <Compile Include="Data\PackageDeliveryGUIContext.cs" />
@@ -185,7 +187,7 @@
     <Compile Include="Mappers\Parameters\DocumentTypeGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\MunicipalityGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\PersonGUIMapper.cs" />
-    <Compile Include="Mappers\Parameters\DeparmentGUIMapper.cs" />
+    <Compile Include="Mappers\Parameters\DepartmentGUIMapper.cs" />
     <Compile Include="Mappers\Parameters\TransportTypeGUIMapper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Core\AddressModel.cs" />
@@ -295,6 +297,16 @@
     <Content Include="Views\TransportType\Details.cshtml" />
     <Content Include="Views\TransportType\Edit.cshtml" />
     <Content Include="Views\TransportType\Index.cshtml" />
+    <Content Include="Views\Municipality\Create.cshtml" />
+    <Content Include="Views\Municipality\Delete.cshtml" />
+    <Content Include="Views\Municipality\Details.cshtml" />
+    <Content Include="Views\Municipality\Edit.cshtml" />
+    <Content Include="Views\Municipality\Index.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
