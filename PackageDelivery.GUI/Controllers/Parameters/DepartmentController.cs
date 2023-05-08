@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using PackageDelivery.Application.Contracts.DTO;
-using PackageDelivery.Application.Contracts.Interfaces.Parameters;
+﻿using PackageDelivery.Application.Contracts.Interfaces.Parameters;
 using PackageDelivery.Application.Implementation.Implementation.Parameters;
 using PackageDelivery.GUI.Implementation.Mappers.Parameters;
-using PackageDelivery.GUI.Models;
 using PackageDelivery.GUI.Models.Parameters;
+using System.Collections.Generic;
+using System.Net;
+using System.Web.Mvc;
 
 namespace PackageDelivery.GUI.Controllers.Parameters
 {
