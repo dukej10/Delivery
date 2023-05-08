@@ -189,6 +189,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ActionMessages.cs" />
     <Compile Include="Mappers\Core\AddressGUIMapper.cs" />
     <Compile Include="Mappers\Core\SendGUIMapper.cs" />
     <Compile Include="Mappers\Core\ShippingStatusGUIMapper.cs" />
