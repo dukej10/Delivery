@@ -4,6 +4,7 @@ using PackageDelivery.Repository.Implementation.DataModel;
 using PackageDelivery.Repository.Implementation.Mappers.Parameters;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,20 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
     {
         public MunicipalityDbModel createRecord(MunicipalityDbModel record)
         {
-            throw new NotImplementedException();
+
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                municipio docType = db.municipio.Where(x => x.nombre.ToUpper().Trim().Equals(record.Name.ToUpper())).FirstOrDefault();
+                if (docType != null)
+                {
+                    return null;
+                }
+                MunicipalityRepositoryMapper mapper = new MunicipalityRepositoryMapper();
+                municipio dt = mapper.DbModelToDatabaseMapper(record);
+                db.municipio.Add(dt);
+                db.SaveChanges();
+                return mapper.DatabaseToDbModelMapper(dt);
+            }
         }
 
         public bool deleteRecordById(int id)
@@ -75,7 +89,23 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
 
         public MunicipalityDbModel updateRecord(MunicipalityDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                municipio td = db.municipio.Where(x => x.id == record.Id).FirstOrDefault();
+                if (td == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    td.nombre = record.Name;
+                    db.Entry(td).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MunicipalityRepositoryMapper mapper = new MunicipalityRepositoryMapper();
+
+                    return mapper.DatabaseToDbModelMapper(td);
+                }
+            }
         }
     }
 }
