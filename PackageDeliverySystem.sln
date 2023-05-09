@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageDelivery.GUI", "PackageDelivery.GUI\PackageDelivery.GUI.csproj", "{E7D55A1A-B96B-4ECB-8B92-73112491747B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{804BB2D3-4A6E-4B16-90E7-14FD9045835A} = {804BB2D3-4A6E-4B16-90E7-14FD9045835A}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 GUI", "1.1 GUI", "{372BBC42-C5AA-42CF-A50F-E53B805FCEAD}"
 EndProject

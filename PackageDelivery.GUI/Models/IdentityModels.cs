@@ -37,5 +37,9 @@ namespace PackageDelivery.GUI.Models
         public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.PersonModel> PersonModels { get; set; }
 
         public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.TransportTypeModel> TransportTypeModels { get; set; }
+
+        public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.MunicipalityModel> MunicipalityModels { get; set; }
+
+        public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.DepartmentModel> DepartmentModels { get; set; }
     }
 }
