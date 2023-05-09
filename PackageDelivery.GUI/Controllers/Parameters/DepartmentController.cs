@@ -1,7 +1,10 @@
-﻿using PackageDelivery.Application.Contracts.Interfaces.Parameters;
+﻿using PackageDelivery.Application.Contracts.DTO;
+using PackageDelivery.Application.Contracts.Interfaces.Parameters;
 using PackageDelivery.Application.Implementation.Implementation.Parameters;
+using PackageDelivery.GUI.Helpers;
 using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Models.Parameters;
+using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
@@ -47,20 +50,25 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] DepartmentModel DepartmentModel)
+        public ActionResult Create([Bind(Include = "Id,Name")] DepartmentModel departmentModel)
         {
             if (ModelState.IsValid)
             {
                 DepartmentGUIMapper mapper = new DepartmentGUIMapper();
-                DepartmentDTO response = _app.createRecord(mapper.ModelToDTOMapper(DepartmentModel));
+                DepartmentDTO response = _app.createRecord(mapper.ModelToDTOMapper(departmentModel));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
-                return View(DepartmentModel);
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
+                return View(departmentModel);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
-            return View(DepartmentModel);
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
+            return View(departmentModel);
         }
 
         // GET: DepartmentModels/Edit/5
