@@ -4,6 +4,7 @@ using PackageDelivery.Repository.Implementation.DataModel;
 using PackageDelivery.Repository.Implementation.Mappers.Parameters;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,19 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
     {
         public PersonDbModel createRecord(PersonDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                persona docType = db.persona.Where(x => x.correo.ToUpper().Trim().Equals(record.Email.ToUpper())).FirstOrDefault();
+                if (docType != null)
+                {
+                    return null;
+                }
+                PersonRepositoryMapper mapper = new PersonRepositoryMapper();
+                persona dt = mapper.DbModelToDatabaseMapper(record);
+                db.persona.Add(dt);
+                db.SaveChanges();
+                return mapper.DatabaseToDbModelMapper(dt);
+            }
         }
 
         public bool deleteRecordById(int id)
@@ -75,7 +88,28 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
 
         public PersonDbModel updateRecord(PersonDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                persona td = db.persona.Where(x => x.id == record.Id).FirstOrDefault();
+                if (td == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    td.primerNombre = record.FirstName;
+                    td.otrosNombres = record.OtherNames;
+                    td.primerApellido = record.FirstLastname;
+                    td.segundoApellido = record.SecondLastname;
+                    td.documento = record.IdentificationNumber;
+                    td.telefono = record.PhoneNumber;
+                    db.Entry(td).State = EntityState.Modified;
+                    db.SaveChanges();
+                    PersonRepositoryMapper mapper = new PersonRepositoryMapper();
+
+                    return mapper.DatabaseToDbModelMapper(td);
+                }
+            }
         }
     }
 }

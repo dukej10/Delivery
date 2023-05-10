@@ -9,9 +9,11 @@ using System.Web.Mvc;
 using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.Application.Contracts.Interfaces.Parameters;
 using PackageDelivery.Application.Implementation.Implementation.Parameters;
+using PackageDelivery.GUI.Helpers;
 using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Models;
 using PackageDelivery.GUI.Models.Parameters;
+using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 
 namespace PackageDelivery.GUI.Controllers.Parameters
 {
@@ -22,7 +24,9 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // GET: TransportType
         public ActionResult Index(string filter = "")
         {
-            return View(_app.getRecordsList(filter));
+            TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
+            IEnumerable<TransportTypeModel> list = mapper.DTOToModelMapper(_app.getRecordsList(filter));
+            return View(list);
         }
 
         // GET: Person/Details/5
@@ -32,7 +36,7 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
             TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
             if (transportTypeDTO == null)
             {
@@ -52,19 +56,24 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] TransportTypeModel transportTypeDTO)
+        public ActionResult Create([Bind(Include = "Id,Name")] TransportTypeModel transportTypeDTO)
         {
             if (ModelState.IsValid)
             {
-                TransportGUIMapper mapper = new TransportGUIMapper();
+                TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
                 TransportTypeDTO response = _app.createRecord(mapper.ModelToDTOMapper(transportTypeDTO));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
                 return View(transportTypeDTO);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
             return View(transportTypeDTO);
         }
 
@@ -75,7 +84,7 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
             TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
             if (transportTypeDTO == null)
             {
@@ -89,19 +98,19 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,OtherNames,FirstLastname,SecondLastname,IdentificationNumber,Cellphone,Email,IdentificationType")] TransportTypeModel transportTypeDTO)
+        public ActionResult Edit([Bind(Include = "Id, Name")] TransportTypeModel transportTypeModel)
         {
             if (ModelState.IsValid)
             {
-                TransportGUIMapper mapper = new TransportGUIMapper();
-                TransportTypeDTO response = _app.updateRecord(mapper.ModelToDTOMapper(transportTypeDTO));
+                TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
+                TransportTypeDTO response = _app.updateRecord(mapper.ModelToDTOMapper(transportTypeModel));
                 if (response != null)
                 {
                     return RedirectToAction("Index");
                 }
             }
             ViewBag.ErrorMessage = "Error ejecutando la acción";
-            return View(transportTypeDTO);
+            return View(transportTypeModel);
         }
 
         // GET: Person/Delete/5
@@ -111,7 +120,7 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TransportGUIMapper mapper = new TransportGUIMapper();
+            TransportTypeGUIMapper mapper = new TransportTypeGUIMapper();
             TransportTypeModel transportTypeDTO = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
             if (transportTypeDTO == null)
             {

@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace PackageDelivery.Application.Implementation.Mappers.Parameters
 {
-    internal class MunicipalityApplicationMapper : DTOMapperBase<MunicipalityDTO, MunicipalityDbModel>
+    public class MunicipalityApplicationMapper : DTOMapperBase<MunicipalityDTO, MunicipalityDbModel>
     {
-       public override MunicipalityDTO DbModelToDTOMapper(MunicipalityDbModel input)
+        public override MunicipalityDTO DbModelToDTOMapper(MunicipalityDbModel input)
         {
             return new MunicipalityDTO()
             {
                 Id = input.Id,
-                Name = input.Name       
+                Name = input.Name
             };
         }
 
@@ -37,7 +37,7 @@ namespace PackageDelivery.Application.Implementation.Mappers.Parameters
             {
                 Id = input.Id,
                 Name = input.Name,
-               
+
             };
         }
 

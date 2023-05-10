@@ -9,10 +9,12 @@ using System.Web.Mvc;
 using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.Application.Contracts.Interfaces.Parameters;
 using PackageDelivery.Application.Implementation.Implementation.Parameters;
+using PackageDelivery.GUI.Helpers;
 using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Mappers.Parameters;
 using PackageDelivery.GUI.Models;
 using PackageDelivery.GUI.Models.Parameters;
+using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 
 namespace PackageDelivery.GUI.Controllers.Parameters
 {
@@ -56,20 +58,25 @@ namespace PackageDelivery.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] MunicipalityModel MunicipalityModel)
+        public ActionResult Create([Bind(Include = "Id,Name")] MunicipalityModel municipalityModel)
         {
             if (ModelState.IsValid)
             {
                 MunicipalityGUIMapper mapper = new MunicipalityGUIMapper();
-                MunicipalityDTO response = _app.createRecord(mapper.ModelToDTOMapper(MunicipalityModel));
+                MunicipalityDTO response = _app.createRecord(mapper.ModelToDTOMapper(municipalityModel));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
-                return View(MunicipalityModel);
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
+                return View(municipalityModel);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
-            return View(MunicipalityModel);
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
+            return View(municipalityModel);
         }
 
         // GET: MunicipalityModels/Edit/5

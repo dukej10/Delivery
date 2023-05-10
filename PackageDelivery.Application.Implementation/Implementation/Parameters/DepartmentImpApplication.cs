@@ -19,7 +19,14 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
         IDepartmentRepository _repository = new DepartmentImpRepository();
         public DepartmentDTO createRecord(DepartmentDTO record)
         {
-            throw new NotImplementedException();
+            DepartmentApplicationMapper mapper = new DepartmentApplicationMapper();
+            DepartmentDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            DepartmentDbModel response = this._repository.createRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
 
         public bool deleteRecordById(int id)
@@ -47,7 +54,14 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
 
         public DepartmentDTO updateRecord(DepartmentDTO record)
         {
-            throw new NotImplementedException();
+            DepartmentApplicationMapper mapper = new DepartmentApplicationMapper();
+            DepartmentDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            DepartmentDbModel response = this._repository.updateRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
     }
 }

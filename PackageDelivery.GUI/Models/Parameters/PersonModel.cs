@@ -28,7 +28,7 @@ namespace PackageDelivery.GUI.Models.Parameters
         public string SecondLastname { get; set; }
 
         [Required]
-        [DisplayName("Identificacion")]
+        [DisplayName("Identificación")]
         public string IdentificationNumber { get; set; }
 
         [Required]
@@ -36,7 +36,7 @@ namespace PackageDelivery.GUI.Models.Parameters
         public string Cellphone { get; set; }
 
         [Required]
-        [DisplayName("Correo electronico")]
+        [DisplayName("Correo electrónico")]
         public string Email { get; set; }
 
         [Required]
