@@ -12,7 +12,20 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
     {
         public OfficeDbModel createRecord(OfficeDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                oficina office = db.oficina.Where(x => x.nombre.ToUpper().Equals(record.Name.ToUpper())).FirstOrDefault();
+                if (office != null)
+                {
+                    return null;
+                    //throw new Exception();
+                }
+                OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
+                oficina ofic = mapper.DbModelToDatabaseMapper(record);
+                db.oficina.Add(ofic);
+                db.SaveChanges();
+                return mapper.DatabaseToDbModelMapper(ofic);
+            }
         }
 
         public bool deleteRecordById(int id)

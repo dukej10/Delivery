@@ -14,7 +14,10 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
         IOfficeRepository _repository = new OfficeImpRepository();
         public OfficeDTO createRecord(OfficeDTO record)
         {
-            throw new NotImplementedException();
+            OfficeApplicationMapper mapper = new OfficeApplicationMapper();
+            OfficeDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            OfficeDbModel response = this._repository.createRecord(dbModel);
+            return mapper.DbModelToDTOMapper(response);
         }
 
         public bool deleteRecordById(int id)
@@ -42,7 +45,10 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
 
         public OfficeDTO updateRecord(OfficeDTO record)
         {
-            throw new NotImplementedException();
+            OfficeApplicationMapper mapper = new OfficeApplicationMapper();
+            OfficeDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            OfficeDbModel response = this._repository.updateRecord(dbModel);
+            return mapper.DbModelToDTOMapper(response);
         }
     }
 }
