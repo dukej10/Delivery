@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
 {
-    internal class DepartmentApplicationMapper : DTOMapperBase<DepartmentDTO, DepartmentDbModel>
+    public class DepartmentApplicationMapper : DTOMapperBase<DepartmentDTO, DepartmentDbModel>
     {
         public override DepartmentDTO DbModelToDTOMapper(DepartmentDbModel input)
         {
@@ -21,7 +21,7 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
         public override IEnumerable<DepartmentDTO> DbModelToDTOMapper(IEnumerable<DepartmentDbModel> input)
         {
             IList<DepartmentDTO> list = new List<DepartmentDTO>();
-             foreach (var item in input)
+            foreach (var item in input)
             {
                 list.Add(this.DbModelToDTOMapper(item));
             }

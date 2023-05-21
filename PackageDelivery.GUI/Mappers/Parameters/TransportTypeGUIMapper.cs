@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace PackageDelivery.GUI.Implementation.Mappers.Parameters
 {
-    public class TransportGUIMapper : ModelMapperBase<TransportTypeModel, TransportTypeDTO>
+    public class TransportTypeGUIMapper : ModelMapperBase<TransportTypeModel, TransportTypeDTO>
 
     {
         public override TransportTypeModel DTOToModelMapper(TransportTypeDTO input)

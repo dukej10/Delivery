@@ -12,12 +12,19 @@ using System.Threading.Tasks;
 
 namespace PackageDelivery.Application.Implementation.Implementation.Parameters
 {
-    public class MunicipalityImpApplication: IMunicipalityApplication
+    public class MunicipalityImpApplication : IMunicipalityApplication
     {
         IMunicipalityRepository _repository = new MunicipalityImpRepository();
         public MunicipalityDTO createRecord(MunicipalityDTO record)
         {
-            throw new NotImplementedException();
+            MunicipalityApplicationMapper mapper = new MunicipalityApplicationMapper();
+            MunicipalityDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            MunicipalityDbModel response = this._repository.createRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
 
         public bool deleteRecordById(int id)
@@ -45,7 +52,14 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
 
         public MunicipalityDTO updateRecord(MunicipalityDTO record)
         {
-            throw new NotImplementedException();
+            MunicipalityApplicationMapper mapper = new MunicipalityApplicationMapper();
+            MunicipalityDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            MunicipalityDbModel response = this._repository.updateRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
     }
 }

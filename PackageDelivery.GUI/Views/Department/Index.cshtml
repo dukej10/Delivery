@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PackageDelivery.GUI.Models.Parameters.TransportTypeModel>
+﻿@model IEnumerable<PackageDelivery.GUI.Models.Parameters.DepartmentModel>
 
 @{
     ViewBag.Title = "Index";
@@ -9,27 +9,27 @@
 <p>
     @Html.ActionLink("Nuevo Registro", "Create", new { }, new { @Class = "btn btn-success" })
 </p>
-
 <fieldset>
-    <legend>Listado de tipos de tipos de transporte</legend>
+    <legend>Listado de departamentos</legend>
+
     <table class="table table-bordered table-responsive">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
-            </th>
+                </th>
             <th>
                 Acciones
             </th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn-warning" }) |
+                </tr>
+    
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn-warning" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @Class = "btn btn-info" }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @Class = "btn btn-danger" })
                 </td>
@@ -38,3 +38,4 @@
 
     </table>
 </fieldset>
+

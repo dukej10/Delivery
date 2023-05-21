@@ -18,7 +18,14 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
         ITransportTypeRepository _repository = new TransportTypeImpRepository();
         public TransportTypeDTO createRecord(TransportTypeDTO record)
         {
-            throw new NotImplementedException();
+            TransportTypeApplicationMapper mapper = new TransportTypeApplicationMapper();
+            TransportTypeDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            TransportTypeDbModel response = this._repository.createRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
 
         public bool deleteRecordById(int id)
@@ -46,7 +53,14 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
 
         public TransportTypeDTO updateRecord(TransportTypeDTO record)
         {
-            throw new NotImplementedException();
+            TransportTypeApplicationMapper mapper = new TransportTypeApplicationMapper();
+            TransportTypeDbModel dbModel = mapper.DTOToDbModelMapper(record);
+            TransportTypeDbModel response = this._repository.updateRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
+            return mapper.DbModelToDTOMapper(response);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.Application.Contracts.Interfaces.Parameters;
+using PackageDelivery.GUI.Helpers;
 using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Models.Parameters;
 using System.Collections.Generic;
@@ -9,9 +10,15 @@ using DocumentTypeImpApplication = PackageDelivery.Application.Implementation.Im
 
 namespace PackageDelivery.GUI.Controllers.Parameters
 {
-    public class DocumentTypeModelsController : Controller
+    public class DocumentTypeController : Controller
     {
         private IDocumentTypeApplication _app = new DocumentTypeImpApplication();
+
+        //private IDocumentTypeApplication _app;
+        //public DocumentTypeController (IDocumentTypeApplication app)
+        //{
+        //    this._app = app;
+        //}
 
         // GET: DocumentTypeModels
         public ActionResult Index(string filter = "")
@@ -56,11 +63,16 @@ namespace PackageDelivery.GUI.Controllers.Parameters
                 DocumentTypeDTO response = _app.createRecord(mapper.ModelToDTOMapper(documentTypeModel));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
                 return View(documentTypeModel);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
             return View(documentTypeModel);
         }
 
