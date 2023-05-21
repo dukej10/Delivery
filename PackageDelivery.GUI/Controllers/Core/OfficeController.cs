@@ -15,7 +15,9 @@ namespace PackageDelivery.GUI.Controllers.Core
         // GET: Office
         public ActionResult Index(string filter = "")
         {
-            return View(_app.getRecordsList(filter));
+            OfficeGUIMapper mapper = new OfficeGUIMapper();
+            IEnumerable<OfficeModel> list = mapper.DTOToModelMapper(_app.getRecordsList(filter));
+            return View(list);
         }
 
         // GET: Office/Details/5
@@ -53,11 +55,16 @@ namespace PackageDelivery.GUI.Controllers.Core
                 OfficeDTO response = _app.createRecord(mapper.ModelToDTOMapper(officeDTO));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
                 return View(officeDTO);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
             return View(officeDTO);
         }
 

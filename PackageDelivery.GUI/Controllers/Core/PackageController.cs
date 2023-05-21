@@ -15,7 +15,9 @@ namespace PackageDelivery.GUI.Controllers.Core
         // GET: Package
         public ActionResult Index(string filter = "")
         {
-            return View(_app.getRecordsList(filter));
+            PackageGUIMapper mapper = new PackageGUIMapper();
+            IEnumerable<PackageModel> list = mapper.DTOToModelMapper(_app.getRecordsList(filter));
+            return View(list);
         }
 
         // GET: Package/Details/5
@@ -53,11 +55,16 @@ namespace PackageDelivery.GUI.Controllers.Core
                 PackageDTO response = _app.createRecord(mapper.ModelToDTOMapper(packageDTO));
                 if (response != null)
                 {
+                    ViewBag.ClassName = ActionMessages.successClass;
+                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
+                ViewBag.ClassName = ActionMessages.warningClass;
+                ViewBag.Message = ActionMessages.alreadyExistsMessage;
                 return View(packageDTO);
             }
-            ViewBag.ErrorMessage = "Error ejecutando la acción";
+            ViewBag.ClassName = ActionMessages.warningClass;
+            ViewBag.Message = ActionMessages.errorMessage;
             return View(packageDTO);
         }
 
