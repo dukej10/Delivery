@@ -4,7 +4,6 @@ using PackageDelivery.Application.Implementation.Mappers.Core;
 using PackageDelivery.Repository.Contracts.DbModels.Core;
 using PackageDelivery.Repository.Contracts.Interfaces;
 using PackageDelivery.Repository.Implementation.Implementation.Core;
-using System;
 using System.Collections.Generic;
 
 namespace PackageDelivery.Application.Implementation.Implementation.Core
@@ -17,6 +16,10 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
             OfficeApplicationMapper mapper = new OfficeApplicationMapper();
             OfficeDbModel dbModel = mapper.DTOToDbModelMapper(record);
             OfficeDbModel response = this._repository.createRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
             return mapper.DbModelToDTOMapper(response);
         }
 
@@ -48,6 +51,10 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
             OfficeApplicationMapper mapper = new OfficeApplicationMapper();
             OfficeDbModel dbModel = mapper.DTOToDbModelMapper(record);
             OfficeDbModel response = this._repository.updateRecord(dbModel);
+            if (response == null)
+            {
+                return null;
+            }
             return mapper.DbModelToDTOMapper(response);
         }
     }

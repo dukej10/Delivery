@@ -2,8 +2,8 @@
 using PackageDelivery.Repository.Contracts.Interfaces;
 using PackageDelivery.Repository.Implementation.DataModel;
 using PackageDelivery.Repository.Implementation.Mappers.Core;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PackageDelivery.Repository.Implementation.Implementation.Core
@@ -12,7 +12,19 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
     {
         public PackageDbModel createRecord(PackageDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                /*paquete package = db.paquete.Where(x => x.).FirstOrDefault();
+                if (package != null)
+                {
+                    return null;
+                }*/
+                PackageRepositoryMapper mapper = new PackageRepositoryMapper();
+                paquete paq = mapper.DbModelToDatabaseMapper(record);
+                db.paquete.Add(paq);
+                db.SaveChanges();
+                return mapper.DatabaseToDbModelMapper(paq);
+            }
         }
 
         public bool deleteRecordById(int id)
@@ -73,7 +85,27 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
 
         public PackageDbModel updateRecord(PackageDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                paquete ofc = db.paquete.Where(x => x.id == record.Id).FirstOrDefault();
+                if (ofc == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    ofc.peso = record.Weight;
+                    ofc.altura = record.Height;
+                    ofc.profundidad = record.Depth;
+                    ofc.ancho = record.Width;
+                    ofc.idOficina = record.IdOffice;
+                    db.Entry(ofc).State = EntityState.Modified;
+                    db.SaveChanges();
+                    PackageRepositoryMapper mapper = new PackageRepositoryMapper();
+
+                    return mapper.DatabaseToDbModelMapper(ofc);
+                }
+            }
         }
     }
 }

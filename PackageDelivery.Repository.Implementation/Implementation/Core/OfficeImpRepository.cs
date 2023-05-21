@@ -2,8 +2,8 @@
 using PackageDelivery.Repository.Contracts.Interfaces;
 using PackageDelivery.Repository.Implementation.DataModel;
 using PackageDelivery.Repository.Implementation.Mappers.Core;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PackageDelivery.Repository.Implementation.Implementation.Core
@@ -18,7 +18,6 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
                 if (office != null)
                 {
                     return null;
-                    //throw new Exception();
                 }
                 OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
                 oficina ofic = mapper.DbModelToDatabaseMapper(record);
@@ -86,7 +85,29 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
 
         public OfficeDbModel updateRecord(OfficeDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                oficina ofic = db.oficina.Where(x => x.id == record.Id).FirstOrDefault();
+                if (ofic == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    ofic.nombre = record.Name;
+                    ofic.codigo = record.Code;
+                    ofic.telefono = record.Phone;
+                    ofic.latitud = record.Latitude;
+                    ofic.longitud = record.Longitude;
+                    ofic.direccion = record.Address;
+                    ofic.idMunicipio = record.IdMunicipality;
+                    db.Entry(ofic).State = EntityState.Modified;
+                    db.SaveChanges();
+                    OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
+
+                    return mapper.DatabaseToDbModelMapper(ofic);
+                }
+            }
         }
     }
 }
