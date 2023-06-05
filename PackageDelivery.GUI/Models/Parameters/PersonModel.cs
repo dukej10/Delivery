@@ -43,5 +43,11 @@ namespace PackageDelivery.GUI.Models.Parameters
         [DisplayName("Tipo de Documento")]
         public int IdentificationType { get; set; }
 
+        public string DocumentTypeName { get; set; }
+
+        public IEnumerable<DocumentTypeModel> DocumentTypeList { get; set; }
+
+        
+
     }
 }
