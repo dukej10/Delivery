@@ -22,6 +22,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
                 {
                     return null;
                 }
+                tipoDocumento tipodDoc = db.tipoDocumento.Where(x => x.id == record.IdentificationType).FirstOrDefault();
                 PersonRepositoryMapper mapper = new PersonRepositoryMapper();
                 persona dt = mapper.DbModelToDatabaseMapper(record);
                 db.persona.Add(dt);

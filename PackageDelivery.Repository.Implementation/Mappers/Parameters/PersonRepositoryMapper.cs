@@ -50,7 +50,8 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
                 documento = input.IdentificationNumber,
                 correo = input.Email,
                 idTipoDocumento = input.IdentificationType,
-                telefono = input.PhoneNumber
+                telefono = input.PhoneNumber,
+
 
             };
         }

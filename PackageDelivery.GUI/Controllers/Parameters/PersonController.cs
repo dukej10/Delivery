@@ -59,7 +59,7 @@ namespace PackageDelivery.GUI.Controllers.Parameters
                 DocumentTypeList = mapper.DTOToModelMapper(list)
             };
 
-            return View();
+            return View(model);
         }
 
         // POST: Person/Create
@@ -72,19 +72,16 @@ namespace PackageDelivery.GUI.Controllers.Parameters
             if (ModelState.IsValid)
             {
                 PersonGUIMapper mapper = new PersonGUIMapper();
+                DocumentTypeDTO document = _dtApp.getRecordById(personModel.IdentificationType);
+                personModel.DocumentTypeName = document.Name;
                 PersonDTO response = _app.createRecord(mapper.ModelToDTOMapper(personModel));
                 if (response != null)
                 {
-                    ViewBag.ClassName = ActionMessages.successClass;
-                    ViewBag.Message = ActionMessages.successMessage;
                     return RedirectToAction("Index");
                 }
-                ViewBag.ClassName = ActionMessages.warningClass;
-                ViewBag.Message = ActionMessages.alreadyExistsMessage;
                 return View(personModel);
             }
-            ViewBag.ClassName = ActionMessages.warningClass;
-            ViewBag.Message = ActionMessages.errorMessage;
+            ViewBag.ErrorMessage = "Error ejecutando la acción";
             return View(personModel);
         }
 
