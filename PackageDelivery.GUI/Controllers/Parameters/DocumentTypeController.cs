@@ -12,13 +12,13 @@ namespace PackageDelivery.GUI.Controllers.Parameters
 {
     public class DocumentTypeController : Controller
     {
-        private IDocumentTypeApplication _app = new DocumentTypeImpApplication();
+        private IDocumentTypeApplication _app;
 
         //private IDocumentTypeApplication _app;
-        //public DocumentTypeController (IDocumentTypeApplication app)
-        //{
-        //    this._app = app;
-        //}
+        public DocumentTypeController(IDocumentTypeApplication app)
+        {
+            this._app = app;
+        }
 
         // GET: DocumentTypeModels
         public ActionResult Index(string filter = "")

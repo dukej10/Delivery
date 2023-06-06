@@ -20,7 +20,12 @@ namespace PackageDelivery.GUI.Controllers.Parameters
 {
     public class MunicipalityController : Controller
     {
-        private IMunicipalityApplication  _app = new MunicipalityImpApplication();
+        private IMunicipalityApplication  _app;
+
+        public MunicipalityController(IMunicipalityApplication app)
+        {
+            _app = app;
+        }
 
         // GET: Municipality
         // GET: MunicipalityModels

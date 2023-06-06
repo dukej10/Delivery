@@ -22,10 +22,14 @@ namespace PackageDelivery.GUI.Controllers.Parameters
     public class PersonController : Controller
     {
 
-        private IPersonApplication _app = new PersonImpApplication();
-        private IDocumentTypeApplication _dtApp = new DocumentTypeImpApplication();
+        private IPersonApplication _app;
+        private IDocumentTypeApplication _dtApp;
         // GET: Person
         // GET: Person
+        public PersonController(IPersonApplication app, IDocumentTypeApplication dtApp ) { 
+            _app = app;
+            _dtApp = dtApp;
+        }
         public ActionResult Index(string filter = "")
         {
             var dtoList = _app.getRecordsList(filter);
