@@ -12,18 +12,26 @@ namespace PackageDelivery.WebServices.Areas.HelpPage.Controllers
     public class HelpController : Controller
     {
         private const string ErrorViewName = "Error";
+        private HttpConfiguration _configuration;
 
         public HelpController()
-            : this(GlobalConfiguration.Configuration)
         {
+            // Si necesitas inicializar Configuration, puedes hacerlo aquí
         }
 
-        public HelpController(HttpConfiguration config)
+        public HttpConfiguration Configuration
         {
-            Configuration = config;
+            get
+            {
+                if (_configuration == null)
+                {
+                    // Puedes inicializar Configuration aquí o lanzar una excepción si no está configurado
+                    throw new InvalidOperationException("HttpConfiguration no está configurado en HelpController.");
+                }
+                return _configuration;
+            }
+            set { _configuration = value; }
         }
-
-        public HttpConfiguration Configuration { get; private set; }
 
         public ActionResult Index()
         {
