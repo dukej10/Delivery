@@ -22,5 +22,7 @@
 
         public string PhoneNumber { get; set; }
 
+        public string DocumentTypeName { get; set; }
+
     }
 }

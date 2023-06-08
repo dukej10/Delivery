@@ -19,7 +19,12 @@ namespace PackageDelivery.GUI.Controllers.Parameters
 {
     public class TransportTypeController : Controller
     {
-        private ITransportTypeApplication _app = new TransportTypeImpApplication();
+        private ITransportTypeApplication _app;
+
+
+        public TransportTypeController(ITransportTypeApplication app) {
+            _app = app;
+        }
 
         // GET: TransportType
         public ActionResult Index(string filter = "")

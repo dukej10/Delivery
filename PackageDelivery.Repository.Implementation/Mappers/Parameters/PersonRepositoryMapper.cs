@@ -22,8 +22,10 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
                 Email = input.correo,
                 IdentificationNumber = input.documento,
                 IdentificationType = input.idTipoDocumento,
-                PhoneNumber = input.telefono
-           };
+                PhoneNumber = input.telefono,
+                DocumentTypeName = input.tipoDocumento.nombre
+
+            };
         }
 
         public override IEnumerable<PersonDbModel> DatabaseToDbModelMapper(IEnumerable<persona> input)
@@ -48,8 +50,9 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Parameters
                 documento = input.IdentificationNumber,
                 correo = input.Email,
                 idTipoDocumento = input.IdentificationType,
-                telefono = input.PhoneNumber
-                
+                telefono = input.PhoneNumber,
+
+
             };
         }
 

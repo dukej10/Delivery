@@ -13,7 +13,13 @@ namespace PackageDelivery.GUI.Controllers.Parameters
 {
     public class DepartmentController : Controller
     {
-        private IDepartmentApplication _app = new DepartmentImpApplication();
+        private IDepartmentApplication _app;
+
+        public DepartmentController(IDepartmentApplication app)
+        {
+            _app = app;
+        }
+
 
         // GET: DepartmentModels
         public ActionResult Index(string filter = "")

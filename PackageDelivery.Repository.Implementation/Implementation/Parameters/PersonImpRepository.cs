@@ -17,11 +17,12 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                persona docType = db.persona.Where(x => x.correo.ToUpper().Trim().Equals(record.Email.ToUpper())).FirstOrDefault();
+                persona docType = db.persona.Where(x => x.documento.ToUpper().Trim().Equals(record.IdentificationNumber.ToUpper())).FirstOrDefault();
                 if (docType != null)
                 {
                     return null;
                 }
+                tipoDocumento tipodDoc = db.tipoDocumento.Where(x => x.id == record.IdentificationType).FirstOrDefault();
                 PersonRepositoryMapper mapper = new PersonRepositoryMapper();
                 persona dt = mapper.DbModelToDatabaseMapper(record);
                 db.persona.Add(dt);
@@ -80,7 +81,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                IEnumerable<persona> list = db.persona.Where(x => x.correo.Contains(filter));
+                IEnumerable<persona> list = db.persona.Where(x => x.primerNombre.Contains(filter) || x.primerApellido.Contains(filter) || x.documento.Equals(filter));
                 PersonRepositoryMapper mapper = new PersonRepositoryMapper();
                 return mapper.DatabaseToDbModelMapper(list);
             }
@@ -103,6 +104,8 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
                     td.segundoApellido = record.SecondLastname;
                     td.documento = record.IdentificationNumber;
                     td.telefono = record.PhoneNumber;
+                    td.correo = record.Email;
+                    td.idTipoDocumento = record.IdentificationType;
                     db.Entry(td).State = EntityState.Modified;
                     db.SaveChanges();
                     PersonRepositoryMapper mapper = new PersonRepositoryMapper();
