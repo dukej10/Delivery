@@ -8,6 +8,10 @@
 
 <p>
     @Html.ActionLink("Nuevo Registro", "Create", new { }, new { @Class = "btn btn-success" })
+    @if (Model.Any())
+    {
+        @Html.ActionLink("Generar reporte", "Person_Report", new { }, new { @Class = "btn btn-success", target = "_blank" })
+    }
 </p>
 
 <fieldset>
