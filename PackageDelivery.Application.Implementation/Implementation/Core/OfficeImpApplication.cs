@@ -11,6 +11,7 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
     public class OfficeImpApplication : IOfficeApplication
     {
         IOfficeRepository _repository = new OfficeImpRepository();
+
         public OfficeDTO createRecord(OfficeDTO record)
         {
             OfficeApplicationMapper mapper = new OfficeApplicationMapper();
@@ -28,7 +29,7 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
             return _repository.deleteRecordById(id);
         }
 
-        public OfficeDTO getRecordById(int id)
+        public OfficeDTO getRecordById(long? id)
         {
             OfficeApplicationMapper mapper = new OfficeApplicationMapper();
             OfficeDbModel dbModel = _repository.getRecordById(id);

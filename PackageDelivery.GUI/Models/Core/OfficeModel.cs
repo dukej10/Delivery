@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PackageDelivery.GUI.Models.Parameters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -17,7 +19,7 @@ namespace PackageDelivery.GUI.Models.Core
         public string Code { get; set; }
 
         [Required]
-        [DisplayName("N° Contacto oficina")]
+        [DisplayName("N° Contacto")]
         public string Phone { get; set; }
 
         [Required]
@@ -33,7 +35,9 @@ namespace PackageDelivery.GUI.Models.Core
         public string Address { get; set; }
         
         [Required]
-        [DisplayName("Id Municipio")]
+        [DisplayName("Municipio")]
         public Nullable<long> IdMunicipality { get; set; }
+
+        public IEnumerable<MunicipalityModel> MunicipalityList { get; set; }
     }
 }

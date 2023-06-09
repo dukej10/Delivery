@@ -5,7 +5,7 @@ namespace PackageDelivery.Repository.Contracts.Interfaces
 {
     public interface IMunicipalityRepository
     {
-        MunicipalityDbModel getRecordById(int id);
+        MunicipalityDbModel getRecordById(long? id);
         IEnumerable<MunicipalityDbModel> getRecordsList(string filter);
         MunicipalityDbModel createRecord(MunicipalityDbModel record);
         MunicipalityDbModel updateRecord(MunicipalityDbModel record);

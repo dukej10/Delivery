@@ -42,7 +42,7 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 latitud = input.Latitude,
                 longitud = input.Longitude,
                 direccion = input.Address,
-                idMunicipio = (long)input.IdMunicipality
+                idMunicipio = input.IdMunicipality
             };
         }
 

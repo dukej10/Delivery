@@ -25,6 +25,7 @@ namespace PackageDelivery.Repository.Implementation.DataModel
         public double peso { get; set; }
         public double altura { get; set; }
         public double profundidad { get; set; }
+        public string codigo { get; set; }
         public double ancho { get; set; }
         public Nullable<long> idOficina { get; set; }
     

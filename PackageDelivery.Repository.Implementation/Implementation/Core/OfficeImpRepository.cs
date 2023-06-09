@@ -5,6 +5,7 @@ using PackageDelivery.Repository.Implementation.Mappers.Core;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PackageDelivery.Repository.Implementation.Implementation.Core
 {
@@ -19,6 +20,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
                 {
                     return null;
                 }
+                municipio munic = db.municipio.Where(x => x.id == record.IdMunicipality).FirstOrDefault();
                 OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
                 oficina ofic = mapper.DbModelToDatabaseMapper(record);
                 db.oficina.Add(ofic);
@@ -54,7 +56,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         /// </summary>
         /// <param name="id">Id del registro a buscar</param>
         /// <returns>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
-        public OfficeDbModel getRecordById(int id)
+        public OfficeDbModel getRecordById(long? id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -77,7 +79,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                IEnumerable<oficina> list = db.oficina.Where(x => x.nombre.Contains(filter));
+                IEnumerable<oficina> list = db.oficina.Where(x => x.nombre.Contains(filter) || x.codigo.Equals(filter));
                 OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
                 return mapper.DatabaseToDbModelMapper(list);
             }

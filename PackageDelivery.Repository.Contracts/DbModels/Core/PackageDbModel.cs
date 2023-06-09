@@ -6,6 +6,8 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
     {
         public long Id { get; set; }
 
+        public string Code { get; set; }
+
         public double Weight { get; set; }
 
         public double Height { get; set; }

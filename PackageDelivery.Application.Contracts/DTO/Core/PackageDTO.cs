@@ -14,6 +14,8 @@ namespace PackageDelivery.Application.Contracts.DTO
 
         public double Width { get; set; }
 
+        public string Code { get; set; }
+
         public Nullable<long> IdOffice { get; set; }
     }
 }

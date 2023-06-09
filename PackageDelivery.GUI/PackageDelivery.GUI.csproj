@@ -219,6 +219,8 @@
     <Compile Include="Controllers\Parameters\MunicipalityController.cs" />
     <Compile Include="Controllers\Parameters\PersonController.cs" />
     <Compile Include="Controllers\Parameters\TransportTypeController.cs" />
+    <Compile Include="Controllers\Core\OfficeController.cs" />
+    <Compile Include="Controllers\Core\PackageController.cs" />
     <Compile Include="Data\PackageDeliveryGUIContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -380,6 +382,16 @@
     <Content Include="Views\Department\Details.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Package\Create.cshtml" />
+    <Content Include="Views\Package\Delete.cshtml" />
+    <Content Include="Views\Package\Details.cshtml" />
+    <Content Include="Views\DPackage\Edit.cshtml" />
+    <Content Include="Views\Package\Index.cshtml" />
+    <Content Include="Views\Office\Create.cshtml" />
+    <Content Include="Views\Office\Delete.cshtml" />
+    <Content Include="Views\Office\Details.cshtml" />
+    <Content Include="Views\Office\Edit.cshtml" />
+    <Content Include="Views\Office\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

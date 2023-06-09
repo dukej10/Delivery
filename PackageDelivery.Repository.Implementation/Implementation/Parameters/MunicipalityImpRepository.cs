@@ -58,7 +58,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Parameters
         /// </summary>
         /// <param name="id">Id del registro a buscar</param>
         /// <returns>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
-        public MunicipalityDbModel getRecordById(int id)
+        public MunicipalityDbModel getRecordById(long? id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {

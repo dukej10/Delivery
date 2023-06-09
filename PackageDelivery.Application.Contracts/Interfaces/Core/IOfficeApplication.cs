@@ -5,7 +5,7 @@ namespace PackageDelivery.Application.Contracts.Interfaces.Core
 {
     public interface IOfficeApplication
     {
-        OfficeDTO getRecordById(int id);
+        OfficeDTO getRecordById(long? id);
         IEnumerable<OfficeDTO> getRecordsList(string filter);
 
         OfficeDTO createRecord(OfficeDTO record);

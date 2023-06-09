@@ -14,11 +14,12 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                /*paquete package = db.paquete.Where(x => x.).FirstOrDefault();
+                paquete package = db.paquete.Where(x => x.codigo.ToUpper().Trim().Equals(record.Code.ToUpper())).FirstOrDefault();
                 if (package != null)
                 {
                     return null;
-                }*/
+                }
+                oficina ofic = db.oficina.Where(x => x.id == record.IdOffice).FirstOrDefault();
                 PackageRepositoryMapper mapper = new PackageRepositoryMapper();
                 paquete paq = mapper.DbModelToDatabaseMapper(record);
                 db.paquete.Add(paq);
@@ -77,7 +78,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                IEnumerable<paquete> list = db.paquete.Where(x => x.idOficina.ToString().Contains(filter));
+                IEnumerable<paquete> list = db.paquete.Where(x => x.codigo.ToString().Equals(filter));
                 PackageRepositoryMapper mapper = new PackageRepositoryMapper();
                 return mapper.DatabaseToDbModelMapper(list);
             }
@@ -98,6 +99,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
                     ofc.altura = record.Height;
                     ofc.profundidad = record.Depth;
                     ofc.ancho = record.Width;
+                    ofc.codigo = record.Code;
                     ofc.idOficina = record.IdOffice;
                     db.Entry(ofc).State = EntityState.Modified;
                     db.SaveChanges();

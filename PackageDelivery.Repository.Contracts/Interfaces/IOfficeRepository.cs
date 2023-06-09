@@ -5,7 +5,7 @@ namespace PackageDelivery.Repository.Contracts.Interfaces
 {
     public interface IOfficeRepository
     {
-        OfficeDbModel getRecordById(int id);
+        OfficeDbModel getRecordById(long? id);
 
         IEnumerable<OfficeDbModel> getRecordsList(string filter);
 
