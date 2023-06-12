@@ -1,13 +1,8 @@
 ﻿using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.Application.Contracts.Interfaces.Core;
-using PackageDelivery.Application.Implementation.Implementation.Core;
 using PackageDelivery.GUI.Helpers;
-using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Mappers.Core;
-using PackageDelivery.GUI.Mappers.Parameters;
 using PackageDelivery.GUI.Models.Core;
-using PackageDelivery.GUI.Models.Parameters;
-using PackageDelivery.Repository.Contracts.DbModels.Parameters;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
@@ -16,8 +11,8 @@ namespace PackageDelivery.GUI.Controllers.Core
 {
     public class PackageController : Controller
     {
-        private IPackageApplication _app = new PackageImpApplication();
-        private IOfficeApplication _oApp = new OfficeImpApplication();
+        private IPackageApplication _app;
+        private IOfficeApplication _oApp;
 
         public PackageController(IPackageApplication app, IOfficeApplication oApp) 
         {
@@ -60,7 +55,6 @@ namespace PackageDelivery.GUI.Controllers.Core
             {
                 OfficeList = mapper.DTOToModelMapper(list)
             };
-
             return View(model);
         }
 

@@ -22,5 +22,7 @@ namespace PackageDelivery.GUI.Data
         public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.PersonModel> PersonModels { get; set; }
 
         public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Parameters.MunicipalityModel> MunicipalityModels { get; set; }
+
+        public System.Data.Entity.DbSet<PackageDelivery.GUI.Models.Core.PackageModel> PackageModels { get; set; }
     }
 }

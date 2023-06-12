@@ -385,7 +385,7 @@
     <Content Include="Views\Package\Create.cshtml" />
     <Content Include="Views\Package\Delete.cshtml" />
     <Content Include="Views\Package\Details.cshtml" />
-    <Content Include="Views\DPackage\Edit.cshtml" />
+    <Content Include="Views\Package\Edit.cshtml" />
     <Content Include="Views\Package\Index.cshtml" />
     <Content Include="Views\Office\Create.cshtml" />
     <Content Include="Views\Office\Delete.cshtml" />

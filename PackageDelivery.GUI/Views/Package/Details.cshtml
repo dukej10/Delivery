@@ -4,55 +4,59 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
     <h4>PackageModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
+    <div class="row">
+        <div class="col-ms-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Weight)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Height)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Height)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Depth)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Depth)
+                </dd>
+            </dl>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
+        <div class="col-ms-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Width)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Width)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Width)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Width)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdOffice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdOffice)
-        </dd>
-
-    </dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdOffice)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IdOffice)
+                </dd>
+            </dl>
+        </div>
+    </div>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'">Editar</button>
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index")'">Volver</button>
 </p>

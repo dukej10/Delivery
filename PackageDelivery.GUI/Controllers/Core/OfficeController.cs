@@ -15,8 +15,8 @@ namespace PackageDelivery.GUI.Controllers.Core
 {
     public class OfficeController : Controller
     {
-        private IOfficeApplication _app = new OfficeImpApplication();
-        private IMunicipalityApplication _mApp = new MunicipalityImpApplication();
+        private IOfficeApplication _app;
+        private IMunicipalityApplication _mApp;
         public OfficeController(IOfficeApplication app, IMunicipalityApplication mApp)
         {
             _app = app;
@@ -58,7 +58,6 @@ namespace PackageDelivery.GUI.Controllers.Core
             {
                 MunicipalityList = mapper.DTOToModelMapper(list)
             };
-
             return View(model);
         }
 

@@ -1,6 +1,4 @@
-﻿using PackageDelivery.GUI.Models.Parameters;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -9,10 +7,6 @@ namespace PackageDelivery.GUI.Models.Core
     public class PackageModel
     {
         public long Id { get; set; }
-
-        [Required]
-        [DisplayName("Código")]
-        public string Code { get; set; }
 
         [Required]
         [DisplayName("Peso")]
@@ -32,7 +26,7 @@ namespace PackageDelivery.GUI.Models.Core
 
         [Required]
         [DisplayName("Oficina")]
-        public Nullable<long> IdOffice { get; set; }
+        public long IdOffice { get; set; }
 
         public IEnumerable<OfficeModel> OfficeList { get; set; }
     }

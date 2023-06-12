@@ -5,7 +5,7 @@ namespace PackageDelivery.Repository.Contracts.Interfaces
 {
     public interface IPackageRepository
     {
-        PackageDbModel getRecordById(int id);
+        PackageDbModel getRecordById(long id);
 
         IEnumerable<PackageDbModel> getRecordsList(string filter);
 
@@ -13,6 +13,6 @@ namespace PackageDelivery.Repository.Contracts.Interfaces
 
         PackageDbModel updateRecord(PackageDbModel record);
 
-        bool deleteRecordById(int id);
+        bool deleteRecordById(long id);
     }
 }

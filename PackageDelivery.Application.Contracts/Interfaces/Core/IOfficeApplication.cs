@@ -5,13 +5,13 @@ namespace PackageDelivery.Application.Contracts.Interfaces.Core
 {
     public interface IOfficeApplication
     {
-        OfficeDTO getRecordById(long? id);
+        OfficeDTO getRecordById(long id);
         IEnumerable<OfficeDTO> getRecordsList(string filter);
 
         OfficeDTO createRecord(OfficeDTO record);
 
         OfficeDTO updateRecord(OfficeDTO record);
 
-        bool deleteRecordById(int id);
+        bool deleteRecordById(long id);
     }
 }

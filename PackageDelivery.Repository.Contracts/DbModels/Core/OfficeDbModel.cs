@@ -18,7 +18,7 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
 
         public string Address { get; set; }
 
-        public Nullable<long> IdMunicipality { get; set; }
+        public long IdMunicipality { get; set; }
 
     }
 }

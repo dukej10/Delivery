@@ -16,7 +16,6 @@ namespace PackageDelivery.GUI.Mappers.Core
                 Height = input.Height,
                 Depth = input.Depth,
                 Width = input.Width,
-                Code = input.Code,
                 IdOffice = input.IdOffice
             };
         }
@@ -40,9 +39,7 @@ namespace PackageDelivery.GUI.Mappers.Core
                 Height = input.Height,
                 Depth = input.Depth,
                 Width = input.Width,
-                Code = input.Code,
                 IdOffice = input.IdOffice
-
             };
         }
 

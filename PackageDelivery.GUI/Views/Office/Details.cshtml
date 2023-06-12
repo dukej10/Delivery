@@ -4,71 +4,77 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
     <h4>OfficeModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <div class="row">
+        <div class="col-sm-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Code)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Code)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+            </dl>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+        <div class="col-sm-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Latitude)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Latitude)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Longitude)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Longitude)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+            </dl>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Latitude)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Longitude)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdMunicipality)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdMunicipality)
-        </dd>
-
-    </dl>
+        <div class="col-sm-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdMunicipality)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IdMunicipality)
+                </dd>
+            </dl>
+        </div>
+    </div>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'">Editar</button>
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index")'">Volver</button>
 </p>

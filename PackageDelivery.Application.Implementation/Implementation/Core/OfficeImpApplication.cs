@@ -24,12 +24,12 @@ namespace PackageDelivery.Application.Implementation.Implementation.Core
             return mapper.DbModelToDTOMapper(response);
         }
 
-        public bool deleteRecordById(int id)
+        public bool deleteRecordById(long id)
         {
             return _repository.deleteRecordById(id);
         }
 
-        public OfficeDTO getRecordById(long? id)
+        public OfficeDTO getRecordById(long id)
         {
             OfficeApplicationMapper mapper = new OfficeApplicationMapper();
             OfficeDbModel dbModel = _repository.getRecordById(id);

@@ -5,7 +5,6 @@ using PackageDelivery.Repository.Implementation.Mappers.Core;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 namespace PackageDelivery.Repository.Implementation.Implementation.Core
 {
@@ -29,7 +28,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
             }
         }
 
-        public bool deleteRecordById(int id)
+        public bool deleteRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -56,7 +55,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         /// </summary>
         /// <param name="id">Id del registro a buscar</param>
         /// <returns>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
-        public OfficeDbModel getRecordById(long? id)
+        public OfficeDbModel getRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {

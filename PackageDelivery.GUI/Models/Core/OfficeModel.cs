@@ -1,5 +1,4 @@
 ﻿using PackageDelivery.GUI.Models.Parameters;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -36,7 +35,7 @@ namespace PackageDelivery.GUI.Models.Core
         
         [Required]
         [DisplayName("Municipio")]
-        public Nullable<long> IdMunicipality { get; set; }
+        public long IdMunicipality { get; set; }
 
         public IEnumerable<MunicipalityModel> MunicipalityList { get; set; }
     }

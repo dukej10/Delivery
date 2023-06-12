@@ -14,7 +14,8 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                paquete package = db.paquete.Where(x => x.codigo.ToUpper().Trim().Equals(record.Code.ToUpper())).FirstOrDefault();
+                paquete package = db.paquete.Where(x => x.peso.Equals(record.Weight) && x.altura.Equals(record.Height)
+                    && x.ancho.Equals(record.Width) && x.profundidad.Equals(record.Depth)).FirstOrDefault();
                 if (package != null)
                 {
                     return null;
@@ -28,7 +29,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
             }
         }
 
-        public bool deleteRecordById(int id)
+        public bool deleteRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -55,7 +56,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         /// </summary>
         /// <param name="id">Id del registro a buscar</param>
         /// <returns>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
-        public PackageDbModel getRecordById(int id)
+        public PackageDbModel getRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -78,7 +79,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                IEnumerable<paquete> list = db.paquete.Where(x => x.codigo.ToString().Equals(filter));
+                IEnumerable<paquete> list = db.paquete.Where(x => x.peso.ToString().Equals(filter) || x.altura.ToString().Equals(filter) || x.profundidad.ToString().Equals(filter) || x.ancho.ToString().Equals(filter));
                 PackageRepositoryMapper mapper = new PackageRepositoryMapper();
                 return mapper.DatabaseToDbModelMapper(list);
             }
@@ -99,7 +100,6 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
                     ofc.altura = record.Height;
                     ofc.profundidad = record.Depth;
                     ofc.ancho = record.Width;
-                    ofc.codigo = record.Code;
                     ofc.idOficina = record.IdOffice;
                     db.Entry(ofc).State = EntityState.Modified;
                     db.SaveChanges();

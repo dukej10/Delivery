@@ -6,8 +6,6 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
     {
         public long Id { get; set; }
 
-        public string Code { get; set; }
-
         public double Weight { get; set; }
 
         public double Height { get; set; }
@@ -16,6 +14,6 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
 
         public double Width { get; set; }
 
-        public Nullable<long> IdOffice { get; set; }
+        public long IdOffice { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace PackageDelivery.Repository.Implementation.DataModel
         public string telefono { get; set; }
         public string latitud { get; set; }
         public string longitud { get; set; }
-        public Nullable<long> idMunicipio { get; set; }
+        public long idMunicipio { get; set; }
         public string direccion { get; set; }
     
         public virtual municipio municipio { get; set; }

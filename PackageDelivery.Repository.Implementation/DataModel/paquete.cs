@@ -25,9 +25,8 @@ namespace PackageDelivery.Repository.Implementation.DataModel
         public double peso { get; set; }
         public double altura { get; set; }
         public double profundidad { get; set; }
-        public string codigo { get; set; }
         public double ancho { get; set; }
-        public Nullable<long> idOficina { get; set; }
+        public long idOficina { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<envio> envio { get; set; }
