@@ -254,6 +254,11 @@
     <Compile Include="Models\Parameters\PersonModel.cs" />
     <Compile Include="Models\Parameters\TransportTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Dataset\OfficeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfficeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Dataset\PersonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -290,6 +295,17 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Reports\Dataset\PersonDataSet.xsc">
       <DependentUpon>PersonDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\Dataset\OfficeDataSet.xsc">
+      <DependentUpon>OfficeDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\Dataset\OfficeDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OfficeDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\Dataset\OfficeDataSet.xss">
+      <DependentUpon>OfficeDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Reports\Dataset\PersonDataSet.xsd">
       <SubType>Designer</SubType>
@@ -449,6 +465,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\rdlcFiles\OfficesReport.rdlc" />
     <EmbeddedResource Include="Reports\rdlcFiles\PeopleReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>

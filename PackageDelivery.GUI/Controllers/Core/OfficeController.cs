@@ -1,13 +1,15 @@
-﻿using PackageDelivery.Application.Contracts.DTO;
+﻿using Microsoft.Reporting.WebForms;
+using PackageDelivery.Application.Contracts.DTO;
 using PackageDelivery.Application.Contracts.Interfaces.Core;
 using PackageDelivery.Application.Contracts.Interfaces.Parameters;
-using PackageDelivery.Application.Implementation.Implementation.Core;
-using PackageDelivery.Application.Implementation.Implementation.Parameters;
 using PackageDelivery.GUI.Helpers;
+using PackageDelivery.GUI.Implementation.Mappers.Parameters;
 using PackageDelivery.GUI.Mappers.Core;
 using PackageDelivery.GUI.Mappers.Parameters;
 using PackageDelivery.GUI.Models.Core;
+using PackageDelivery.GUI.Models.Parameters;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
@@ -156,6 +158,40 @@ namespace PackageDelivery.GUI.Controllers.Core
             }
             ViewBag.ErrorMessage = "Error ejecutando la acción";
             return View();
+        }
+
+        public ActionResult Office_Report(string format = "PDF")
+        {
+            var list = _app.getRecordsList(string.Empty);
+            OfficeGUIMapper mapper = new OfficeGUIMapper();
+            List<OfficeModel> recordsList = mapper.DTOToModelMapper(list).ToList();
+            string reportPath = Server.MapPath("~/Reports/rdlcFiles/OfficesReport.rdlc");
+            //List<string> dataSets = new List<string> { "CustomerList" };
+            LocalReport lr = new LocalReport();
+
+            lr.ReportPath = reportPath;
+            lr.EnableHyperlinks = true;
+
+            Warning[] warnings;
+            string[] streams;
+            byte[] renderedBytes;
+            string mimeType, encoding, fileNameExtension;
+
+            ReportDataSource res = new ReportDataSource("OfficesList", recordsList);
+            lr.DataSources.Add(res);
+
+
+            renderedBytes = lr.Render(
+            format,
+            string.Empty,
+            out mimeType,
+            out encoding,
+            out fileNameExtension,
+            out streams,
+            out warnings
+            );
+
+            return File(renderedBytes, mimeType);
         }
     }
 }
