@@ -59,7 +59,7 @@ namespace PackageDelivery.GUI.Controllers.Parameters
                 DocumentTypeList = mapper.DTOToModelMapper(list)
             };
 
-            return View();
+            return View(model);
         }
 
         // POST: Person/Create

@@ -20,7 +20,10 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 Observaciones = input.observaciones,
                 Actual = input.actual,
                 IdMunicipio = input.idMunicipio,
-                IdPersona = input.idPersona
+                IdPersona = input.idPersona,
+                MunicipioName = input.municipio.nombre,
+                PersonaName = input.persona.primerNombre + " " + input.persona.primerApellido
+                
 
             };
         }
@@ -47,7 +50,9 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 observaciones = input.Observaciones,
                 actual = input.Actual,
                 idMunicipio = input.IdMunicipio,
-                idPersona = input.IdPersona
+                idPersona = input.IdPersona,
+      
+
 
             };
         }

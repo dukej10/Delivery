@@ -49,7 +49,7 @@
 
     <div class="form-group col-sm-6">
         @Html.LabelFor(model => model.IdentificationType)
-        @Html.DropDownListFor(model => model.IdentificationType, new SelectList(Model.DocumentTypeList, "Id", "Name"), new { @class = "form-control chosen-select-single", @id = "selDocumentType", data_placeholder = "-- Seleccione el tipo de documento --" })
+        @Html.DropDownListFor(model => model.IdentificationType, new SelectList(Model.DocumentTypeList, "Id", "Name"), new { @class = "form-control chosen-select-single", id = "selDocumentType", data_placeholder = "-- Seleccione el tipo de documento --" })
         @Html.ValidationMessageFor(model => model.IdentificationType, "", new { @class = "text-danger" })
     </div>
 

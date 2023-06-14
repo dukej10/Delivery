@@ -18,7 +18,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                direccion direccion = db.direccion.Where(x => x.numero.ToUpper().Trim().Equals(record.Numero.ToUpper())).FirstOrDefault();
+                direccion direccion = db.direccion.Where(x => x.tipoCalle.ToUpper().Trim().Equals(record.TipoCalle.ToUpper())).FirstOrDefault();
                 if (direccion != null)
                 {
                     return null;
@@ -86,9 +86,18 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
                 {
                     return null;
                 }
+
                 else
                 {
+                    td.idMunicipio = record.IdMunicipio;
                     td.numero = record.Numero;
+                    td.idPersona = record.IdPersona;
+                    td.tipoCalle = record.TipoCalle;
+                    td.tipoInmueble = record.TipoInmueble;
+                    td.observaciones = record.Observaciones;
+                    td.barrio = record.Barrio;
+                    td.actual = record.Actual;
+
                     db.Entry(td).State = EntityState.Modified;
                     db.SaveChanges();
                     AddressRepositoryMapper mapper = new AddressRepositoryMapper();

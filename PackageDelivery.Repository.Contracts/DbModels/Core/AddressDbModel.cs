@@ -18,5 +18,9 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
         public bool Actual { get; set; }
         public long IdMunicipio { get; set; }
         public long IdPersona { get; set; }
+
+        public string MunicipioName { get; set; }
+
+        public string PersonaName { get; set; }
     }
 }
