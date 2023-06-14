@@ -78,7 +78,7 @@ namespace PackageDelivery.GUI.Controllers.Core
                 MunicipalityDTO municipality = _mApp.getRecordById((int)addressModel.IdMunicipio);
                 PersonDTO person = _pApp.getRecordById((int)addressModel.IdPersona);
                 addressModel.MunicipioName = municipality.Name;
-                addressModel.PersonaName = person.FirstName +person.FirstLastname;
+                addressModel.PersonaName = person.FirstName + " "+ person.FirstLastname;
                 AddressDTO response = _app.createRecord(mapper.ModelToDTOMapper(addressModel));
                 if (response != null)
                 {

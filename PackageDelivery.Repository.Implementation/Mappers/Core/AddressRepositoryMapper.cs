@@ -21,8 +21,6 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 Actual = input.actual,
                 IdMunicipio = input.idMunicipio,
                 IdPersona = input.idPersona,
-                MunicipioName = input.municipio.nombre,
-                PersonaName = input.persona.primerNombre + " " + input.persona.primerApellido
                 
 
             };
