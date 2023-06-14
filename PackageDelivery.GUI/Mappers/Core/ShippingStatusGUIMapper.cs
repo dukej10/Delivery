@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PackageDelivery.Repository.Implementation.Mappers.Core
+namespace PackageDelivery.GUI.Implementation.Mappers.Core
 {
     internal class ShippingStatusGUIMapper : ModelMapperBase<ShippingStatusModel, ShippingStatusDTO>
     {

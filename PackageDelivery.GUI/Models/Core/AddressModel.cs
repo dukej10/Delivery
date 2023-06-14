@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PackageDelivery.GUI.Models.Parameters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -14,7 +15,7 @@ namespace PackageDelivery.GUI.Models.Core
         public long Id { get; set; }
 
         [Required]
-        [DisplayName("Tipo de Cale")]
+        [DisplayName("Tipo de Calle")]
         public string TipoCalle { get; set; }
 
         [Required]
@@ -37,12 +38,19 @@ namespace PackageDelivery.GUI.Models.Core
         [DisplayName("Actual")]
         public bool Actual { get; set; }
 
-        [Required]
-        [DisplayName("Id Municipio")]
+        //[Required]
+        //[DisplayName("Id Municipio")]
         public long IdMunicipio { get; set; }
 
-        [Required]
-        [DisplayName("Id Persona")]
+        //[Required]
+        //[DisplayName("Id Persona")]
         public long IdPersona { get; set; }
+
+        public string MunicipioName { get; set; }
+
+        public string PersonaName { get; set; }
+
+        public IEnumerable<MunicipalityModel> MunicipioList { get; set; }
+        public IEnumerable<PersonModel> PersonaList { get; set; }
     }
 }

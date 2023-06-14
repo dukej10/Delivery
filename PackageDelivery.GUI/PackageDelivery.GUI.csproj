@@ -212,6 +212,10 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Core\AddressController.cs" />
+    <Compile Include="Controllers\Core\OfficeController.cs" />
+    <Compile Include="Controllers\Core\PackageController.cs" />
+    <Compile Include="Controllers\Core\ShippingStatusController.cs" />
     <Compile Include="Controllers\InitController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Parameters\DepartmentController.cs" />
@@ -239,7 +243,6 @@
     <Compile Include="Models\Core\ShippingStatusModel.cs" />
     <Compile Include="Mappers\Core\OfficeGUIMapper.cs" />
     <Compile Include="Mappers\Core\PackageGUIMapper.cs" />
-    <Compile Include="Mappers\ModelMapperBase.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Core\OfficeModel.cs" />
     <Compile Include="Models\Core\PackageModel.cs" />
@@ -371,6 +374,16 @@
     <Content Include="Views\TransportType\Details.cshtml" />
     <Content Include="Views\TransportType\Edit.cshtml" />
     <Content Include="Views\TransportType\Index.cshtml" />
+    <Content Include="Views\OfficeModel\Create.cshtml" />
+    <Content Include="Views\OfficeModel\Delete.cshtml" />
+    <Content Include="Views\OfficeModel\Details.cshtml" />
+    <Content Include="Views\OfficeModel\Edit.cshtml" />
+    <Content Include="Views\OfficeModel\Index.cshtml" />
+    <Content Include="Views\Package\Create.cshtml" />
+    <Content Include="Views\Package\Delete.cshtml" />
+    <Content Include="Views\Package\Details.cshtml" />
+    <Content Include="Views\Package\Edit.cshtml" />
+    <Content Include="Views\Package\Index.cshtml" />
     <Content Include="Views\Municipality\Create.cshtml" />
     <Content Include="Views\Municipality\Delete.cshtml" />
     <Content Include="Views\Municipality\Details.cshtml" />
@@ -381,6 +394,16 @@
     <Content Include="Views\Department\Details.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\ShippingStatus\Create.cshtml" />
+    <Content Include="Views\ShippingStatus\Delete.cshtml" />
+    <Content Include="Views\ShippingStatus\Details.cshtml" />
+    <Content Include="Views\ShippingStatus\Edit.cshtml" />
+    <Content Include="Views\ShippingStatus\Index.cshtml" />
+    <Content Include="Views\Address\Create.cshtml" />
+    <Content Include="Views\Address\Delete.cshtml" />
+    <Content Include="Views\Address\Details.cshtml" />
+    <Content Include="Views\Address\Edit.cshtml" />
+    <Content Include="Views\Address\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

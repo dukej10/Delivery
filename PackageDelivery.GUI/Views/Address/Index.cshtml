@@ -1,0 +1,84 @@
+﻿@model IEnumerable<PackageDelivery.GUI.Models.Core.AddressModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create", new { }, new { @Class = "btn btn-success" })
+</p>
+
+<fieldset>
+    <legend>Listado de direcciones</legend>
+
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoInmueble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barrio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MunicipioName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonaName)
+            </th>
+            <th>
+                Acciones
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoCalle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoInmueble)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Barrio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MunicipioName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonaName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn-warning" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @Class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @Class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</fieldset>
