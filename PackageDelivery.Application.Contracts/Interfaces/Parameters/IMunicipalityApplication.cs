@@ -9,7 +9,7 @@ namespace PackageDelivery.Application.Contracts.Interfaces.Parameters
 {
     public interface IMunicipalityApplication
     {
-        MunicipalityDTO getRecordById(int id);
+        MunicipalityDTO getRecordById(long? idMunicipality);
         IEnumerable<MunicipalityDTO> getRecordsList(string filter);
 
         MunicipalityDTO createRecord(MunicipalityDTO record);

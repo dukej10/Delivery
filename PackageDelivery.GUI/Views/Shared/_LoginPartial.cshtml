@@ -1,37 +1,43 @@
 ﻿@using Microsoft.AspNet.Identity
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-<ul class="navbar-nav navbar-right">
-    <li>
-        @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Personas", "Index", "Person")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Tipo de Documento", "Index", "DocumentType")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Tipo de transporte", "Index", "TransportType")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Municipios", "Index", "Municipality")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Departamento", "Index", "Department")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Estado envíos", "Index", "ShippingStatus")
-    </li>
-    <li class="nav-link">
-        @Html.ActionLink("Direcciones", "Index", "Address")
-    </li>
-
-</ul>
+        <ul class="navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Personas", "Index", "Person")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Tipo de Documento", "Index", "DocumentType")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Tipo de transporte", "Index", "TransportType")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Municipios", "Index", "Municipality")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Departamento", "Index", "Department")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Estado envíos", "Index", "ShippingStatus")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Direcciones", "Index", "Address")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Oficina", "Index", "Office")
+            </li>
+            <li class="nav-link">
+                @Html.ActionLink("Paquete", "Index", "Package")
+            </li>
+        </ul>
     }
 }
 else
@@ -41,4 +47,3 @@ else
         <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</li>
     </ul>
 }
-

@@ -5,10 +5,14 @@ namespace PackageDelivery.Repository.Contracts.Interfaces
 {
     public interface IOfficeRepository
     {
-        OfficeDbModel getRecordById(int id);
+        OfficeDbModel getRecordById(long id);
+
         IEnumerable<OfficeDbModel> getRecordsList(string filter);
+
         OfficeDbModel createRecord(OfficeDbModel record);
+
         OfficeDbModel updateRecord(OfficeDbModel record);
-        bool deleteRecordById(int id);
+
+        bool deleteRecordById(long id);
     }
 }

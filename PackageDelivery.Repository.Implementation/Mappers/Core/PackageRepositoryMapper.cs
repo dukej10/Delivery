@@ -15,7 +15,7 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 Height = input.altura,
                 Depth = input.profundidad,
                 Width = input.ancho,
-                IdOffice = input.idOficina
+                IdOffice = (long)input.idOficina
             };
         }
 
@@ -39,7 +39,6 @@ namespace PackageDelivery.Repository.Implementation.Mappers.Core
                 profundidad = input.Depth,
                 ancho = input.Width,
                 idOficina = input.IdOffice
-
             };
         }
 

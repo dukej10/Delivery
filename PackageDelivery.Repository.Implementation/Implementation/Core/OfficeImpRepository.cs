@@ -2,8 +2,8 @@
 using PackageDelivery.Repository.Contracts.Interfaces;
 using PackageDelivery.Repository.Implementation.DataModel;
 using PackageDelivery.Repository.Implementation.Mappers.Core;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PackageDelivery.Repository.Implementation.Implementation.Core
@@ -12,10 +12,23 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
     {
         public OfficeDbModel createRecord(OfficeDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                oficina office = db.oficina.Where(x => x.nombre.ToUpper().Equals(record.Name.ToUpper())).FirstOrDefault();
+                if (office != null)
+                {
+                    return null;
+                }
+                municipio munic = db.municipio.Where(x => x.id == record.IdMunicipality).FirstOrDefault();
+                OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
+                oficina ofic = mapper.DbModelToDatabaseMapper(record);
+                db.oficina.Add(ofic);
+                db.SaveChanges();
+                return mapper.DatabaseToDbModelMapper(ofic);
+            }
         }
 
-        public bool deleteRecordById(int id)
+        public bool deleteRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -42,7 +55,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         /// </summary>
         /// <param name="id">Id del registro a buscar</param>
         /// <returns>null cuando no lo encuentra o el objeto cuando si lo encuentra</returns>
-        public OfficeDbModel getRecordById(int id)
+        public OfficeDbModel getRecordById(long id)
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
@@ -65,7 +78,7 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
         {
             using (PackageDeliveryEntities db = new PackageDeliveryEntities())
             {
-                IEnumerable<oficina> list = db.oficina.Where(x => x.nombre.Contains(filter));
+                IEnumerable<oficina> list = db.oficina.Where(x => x.nombre.Contains(filter) || x.codigo.Equals(filter));
                 OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
                 return mapper.DatabaseToDbModelMapper(list);
             }
@@ -73,7 +86,29 @@ namespace PackageDelivery.Repository.Implementation.Implementation.Core
 
         public OfficeDbModel updateRecord(OfficeDbModel record)
         {
-            throw new NotImplementedException();
+            using (PackageDeliveryEntities db = new PackageDeliveryEntities())
+            {
+                oficina ofic = db.oficina.Where(x => x.id == record.Id).FirstOrDefault();
+                if (ofic == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    ofic.nombre = record.Name;
+                    ofic.codigo = record.Code;
+                    ofic.telefono = record.Phone;
+                    ofic.latitud = record.Latitude;
+                    ofic.longitud = record.Longitude;
+                    ofic.direccion = record.Address;
+                    ofic.idMunicipio = record.IdMunicipality;
+                    db.Entry(ofic).State = EntityState.Modified;
+                    db.SaveChanges();
+                    OfficeRepositoryMapper mapper = new OfficeRepositoryMapper();
+
+                    return mapper.DatabaseToDbModelMapper(ofic);
+                }
+            }
         }
     }
 }

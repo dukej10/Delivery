@@ -4,7 +4,9 @@ namespace PackageDelivery.GUI.App_Start
 {
     using System.Reflection;
     using System.Web.Mvc;
+    using PackageDelivery.Application.Contracts.Interfaces.Core;
     using PackageDelivery.Application.Contracts.Interfaces.Parameters;
+    using PackageDelivery.Application.Implementation.Implementation.Core;
     using PackageDelivery.Application.Implementation.Implementation.Parameters;
     using PackageDelivery.Repository.Contracts.Interfaces;
     using PackageDelivery.Repository.Implementation.Implementation.Parameters;
@@ -37,6 +39,8 @@ namespace PackageDelivery.GUI.App_Start
             container.Register<IDocumentTypeApplication, DocumentTypeImpApplication>(Lifestyle.Scoped);
             container.Register<IMunicipalityApplication, MunicipalityImpApplication>(Lifestyle.Scoped);
             container.Register<ITransportTypeApplication, TransportTypeImpApplication>(Lifestyle.Scoped);
+            container.Register<IOfficeApplication, OfficeImpApplication>(Lifestyle.Scoped);
+            container.Register<IPackageApplication, PackageImpApplication>(Lifestyle.Scoped);
 
             container.RegisterMvcControllers();
 

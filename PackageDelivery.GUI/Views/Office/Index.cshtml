@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PackageDelivery.GUI.Models.Core.PackageModel>
+﻿@model IEnumerable<PackageDelivery.GUI.Models.Core.OfficeModel>
 
 @{
     ViewBag.Title = "Index";
@@ -11,25 +11,32 @@
 </p>
 
 <fieldset>
-    <legend>Listado de Paquetes</legend>
+    <legend>Listado de Oficinas</legend>
 
     <table class="table table-bordered table-responsive">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Height)
+                @Html.DisplayNameFor(model => model.Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Depth)
+                @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Width)
+                @Html.DisplayNameFor(model => model.Latitude)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdOffice)
+                @Html.DisplayNameFor(model => model.Longitude)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMunicipality)
+            </th>
+
             <th>
                 Acciones
             </th>
@@ -39,19 +46,25 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Height)
+                    @Html.DisplayFor(modelItem => item.Code)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Depth)
+                    @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Width)
+                    @Html.DisplayFor(modelItem => item.Latitude)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdOffice)
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdMunicipality)
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @Class = "btn btn-warning" }) |
@@ -60,7 +73,6 @@
                 </td>
             </tr>
         }
-
     </table>
 </fieldset>
 

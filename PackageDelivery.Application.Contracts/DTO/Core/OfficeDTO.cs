@@ -18,6 +18,6 @@ namespace PackageDelivery.Application.Contracts.DTO
 
         public string Address { get; set; }
 
-        public Nullable<long> IdMunicipality { get; set; }
+        public long IdMunicipality { get; set; }
     }
 }

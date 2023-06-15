@@ -40,7 +40,6 @@ namespace PackageDelivery.GUI.Mappers.Core
                 Depth = input.Depth,
                 Width = input.Width,
                 IdOffice = input.IdOffice
-
             };
         }
 

@@ -14,6 +14,6 @@ namespace PackageDelivery.Repository.Contracts.DbModels.Core
 
         public double Width { get; set; }
 
-        public Nullable<long> IdOffice { get; set; }
+        public long IdOffice { get; set; }
     }
 }

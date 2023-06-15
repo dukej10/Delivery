@@ -32,7 +32,7 @@ namespace PackageDelivery.Application.Implementation.Implementation.Parameters
             return _repository.deleteRecordById(id);
         }
 
-        public MunicipalityDTO getRecordById(int id)
+        public MunicipalityDTO getRecordById(long? id)
         {
             MunicipalityApplicationMapper mapper = new MunicipalityApplicationMapper();
             MunicipalityDbModel dbModel = _repository.getRecordById(id);
