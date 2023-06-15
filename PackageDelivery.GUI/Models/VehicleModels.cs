@@ -32,6 +32,7 @@ namespace PackageDelivery.GUI.Models
         public string Plaque { get; set; }
     }
 
+    // 
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }

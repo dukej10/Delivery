@@ -46,7 +46,8 @@ namespace PackageDelivery.GUI.Models
         public string descripcion { get; set; }
 
     }
-
+    // 
+    //
     public class ConfiguredescripcionViewModel
     {
         public string SelectedProvider { get; set; }
