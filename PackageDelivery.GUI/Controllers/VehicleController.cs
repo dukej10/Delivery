@@ -21,7 +21,10 @@ namespace PackageDelivery.GUI.Controllers
         public VehicleController()
         {
         }
-
+        // El código siguiente protege de los ataques por fuerza bruta a los códigos de dos factores. 
+        // Si un usuario introduce códigos incorrectos durante un intervalo especificado de tiempo, la cuenta del usuario 
+        // se bloqueará durante un período de tiempo especificado. 
+        // Puede configurar el bloqueo de la cuenta en IdentityConfig
         public VehicleController(ApplicationVehicle Vehicle, ApplicationSignInVehicle SignInVehicle)
         {
             Vehicle = vehicle;
