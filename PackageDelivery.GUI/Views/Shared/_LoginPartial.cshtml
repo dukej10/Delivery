@@ -5,39 +5,27 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-
-        <ul class="navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Personas", "Index", "Person")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Tipo de Documento", "Index", "DocumentType")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Tipo de transporte", "Index", "TransportType")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Municipios", "Index", "Municipality")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Departamento", "Index", "Department")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Estado envíos", "Index", "ShippingStatus")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Direcciones", "Index", "Address")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Oficina", "Index", "Office")
-            </li>
-            <li class="nav-link">
-                @Html.ActionLink("Paquete", "Index", "Package")
-            </li>
-        </ul>
+<ul class="navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menú
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="@Url.Action("Index", "Person")">Personas</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "DocumentType")">Tipo de Documento</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "TransportType")">Tipo de transporte</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "Municipality")">Municipios</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "Department")">Departamento</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "ShippingStatus")">Estado envíos</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "Address")">Direcciones</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "Office")">Oficina</a>
+            <a class="dropdown-item" href="@Url.Action("Index", "Package")">Paquete</a>
+        </div>
+    </li>
+</ul>
     }
 }
 else
@@ -47,3 +35,12 @@ else
         <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</li>
     </ul>
 }
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
