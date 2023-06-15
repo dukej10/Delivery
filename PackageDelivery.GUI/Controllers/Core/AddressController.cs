@@ -75,10 +75,10 @@ namespace PackageDelivery.GUI.Controllers.Core
             if (ModelState.IsValid)
             {
                 AddressGUIMapper mapper = new AddressGUIMapper();
-                MunicipalityDTO municipality = _mApp.getRecordById((int)addressModel.IdMunicipio);
+                MunicipalityDTO municipality = _mApp.getRecordById(addressModel.IdMunicipio);
                 PersonDTO person = _pApp.getRecordById((int)addressModel.IdPersona);
                 addressModel.MunicipioName = municipality.Name;
-                addressModel.PersonaName = person.FirstName + " "+ person.FirstLastname;
+                addressModel.PersonaName = person.FirstName + " " + person.FirstLastname;
                 AddressDTO response = _app.createRecord(mapper.ModelToDTOMapper(addressModel));
                 if (response != null)
                 {
@@ -104,7 +104,7 @@ namespace PackageDelivery.GUI.Controllers.Core
             }
             AddressGUIMapper mapper = new AddressGUIMapper();
             AddressModel addressModel = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
-            IEnumerable <MunicipalityDTO> mList = this._mApp.getRecordsList(string.Empty);
+            IEnumerable<MunicipalityDTO> mList = this._mApp.getRecordsList(string.Empty);
             IEnumerable<PersonDTO> pList = this._pApp.getRecordsList(string.Empty);
             MunicipalityGUIMapper mMapper = new MunicipalityGUIMapper();
             PersonGUIMapper pMapper = new PersonGUIMapper();
