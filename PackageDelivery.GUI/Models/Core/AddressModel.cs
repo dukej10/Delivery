@@ -39,11 +39,11 @@ namespace PackageDelivery.GUI.Models.Core
         public bool Actual { get; set; }
 
         //[Required]
-        //[DisplayName("Id Municipio")]
+        [DisplayName("Nombre Municipio")]
         public long IdMunicipio { get; set; }
 
         //[Required]
-        //[DisplayName("Id Persona")]
+        [DisplayName("Nombre Persona")]
         public long IdPersona { get; set; }
 
         public string MunicipioName { get; set; }
