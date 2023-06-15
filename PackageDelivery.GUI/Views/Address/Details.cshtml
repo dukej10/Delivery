@@ -7,68 +7,85 @@
 <h2>Details</h2>
 
 <div>
-    <h4>AddressModel</h4>
+    <h4>Direcciones</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoCalle)
-        </dt>
+    <div class="row">
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoCalle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TipoCalle)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TipoCalle)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoInmueble)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TipoInmueble)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Barrio)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Barrio)
+            </dd>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoInmueble)
-        </dt>
+    <div class="row">
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Observaciones)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Observaciones)
+            </dd>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TipoInmueble)
-        </dd>
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Actual)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Actual)
+            </dd>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Barrio)
-        </dt>
+    <div class="row">
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.PersonaName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PersonaName)
+            </dd>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Barrio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Observaciones)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Actual)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Actual)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PersonaName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MunicipioName)
-        </dd>
-
-    </dl>
+        <div class="col-sm-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.MunicipioName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MunicipioName)
+            </dd>
+        </div>
+    </div>
+</dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'">Editar</button>
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index")'">Volver</button>
 </p>
