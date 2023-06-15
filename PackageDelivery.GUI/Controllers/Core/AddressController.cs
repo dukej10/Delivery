@@ -49,6 +49,13 @@ namespace PackageDelivery.GUI.Controllers.Core
             }
             AddressGUIMapper mapper = new AddressGUIMapper();
             AddressModel addressModel = mapper.DTOToModelMapper(_app.getRecordById(id.Value));
+            MunicipalityDTO mList = this._mApp.getRecordById(addressModel.IdMunicipio);
+            PersonDTO pList = this._pApp.getRecordById((int)addressModel.IdPersona);
+            MunicipalityGUIMapper mMapper = new MunicipalityGUIMapper();
+            PersonGUIMapper pMapper = new PersonGUIMapper();
+            addressModel.MunicipioName = mMapper.DTOToModelMapper(mList).Name;
+            PersonModel person = pMapper.DTOToModelMapper(pList);
+            addressModel.PersonaName = person.FirstName + " " + person.FirstLastname;
             if (addressModel == null)
             {
                 return HttpNotFound();
