@@ -41,6 +41,8 @@ namespace PackageDelivery.GUI.App_Start
             container.Register<ITransportTypeApplication, TransportTypeImpApplication>(Lifestyle.Scoped);
             container.Register<IOfficeApplication, OfficeImpApplication>(Lifestyle.Scoped);
             container.Register<IPackageApplication, PackageImpApplication>(Lifestyle.Scoped);
+            container.Register<IAddressApplication, AddressImpApplication>(Lifestyle.Scoped);
+            container.Register<IShippingStatusApplication, ShippingStatusImpApplication>(Lifestyle.Scoped);
 
             container.RegisterMvcControllers();
 

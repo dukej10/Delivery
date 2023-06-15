@@ -18,7 +18,12 @@ namespace PackageDelivery.GUI.Controllers.Core
 {
     public class ShippingStatusController : Controller
     {
-        private IShippingStatusApplication _app = new ShippingStatusImpApplication();
+        private IShippingStatusApplication _app;
+
+        public ShippingStatusController(IShippingStatusApplication app)
+        {
+            _app = app;
+        }
 
         // GET: ShippingStatus
         public ActionResult Index(string filter = "")

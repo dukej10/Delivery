@@ -21,9 +21,16 @@ namespace PackageDelivery.GUI.Controllers.Core
 {
     public class AddressController : Controller
     {
-        private IAddressApplication _app = new AddressImpApplication();
-        private IMunicipalityApplication _mApp = new MunicipalityImpApplication();
-        private IPersonApplication _pApp = new PersonImpApplication();
+        private IAddressApplication _app;
+        private IMunicipalityApplication _mApp;
+        private IPersonApplication _pApp;
+
+        public AddressController(IAddressApplication app, IMunicipalityApplication mApp, IPersonApplication pApp)
+        {
+            _app = app;
+            _mApp = mApp;
+            _pApp = pApp;
+        }
 
         public ActionResult Index(string filter = "")
         {
